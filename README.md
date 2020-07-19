@@ -1,2 +1,2 @@
-# repotimization-pvcp
-This package implements Reoptimization of Path Vertex Cover Problem
+# Repotimization Algorithms
+This package implements some well known Reoptimization algorithms
