@@ -13,4 +13,3 @@ Graph Data structure
 
 .. _Adjacency list: https://en.wikipedia.org/wiki/Adjacency_list
 .. _Introduction to Graph Theory By Douglas Brent West: http://free-journal.umm.ac.id/files/file/igtpref.ps
-
