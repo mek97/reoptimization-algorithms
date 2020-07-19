@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 here = path.abspath(path.dirname(__file__))
 
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
@@ -15,7 +15,7 @@ setup(
 
     long_description=long_description,  # Optional
 
-    long_description_content_type='text/markdown',  # Optional (see note above)
+    long_description_content_type='text/x-rst',  # Optional (see note above)
 
     url='https://github.com/mek97/repotimization-algorithms',  # Optional
 
