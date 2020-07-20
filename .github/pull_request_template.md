@@ -1,6 +1,7 @@
 ---
 Make sure to mark the boxes below before creating PR: [x]
 
+- [ ] Code follows the style guidelines of this project
 - [ ] Description above provides context of the change
 - [ ] Unit tests coverage for changes (not needed for documentation changes)
 - [ ] Target Github ISSUE in description if exists
