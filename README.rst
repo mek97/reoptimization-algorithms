@@ -84,5 +84,5 @@ Installation Command
 Contribution
 ============
 
-Want to add or improvise the repository? Check out our contributing documentation :)
+Want to add or improvise the repository? Check out the `Contributing <https://github.com/mek97/repotimization-algorithms/blob/master/CONTRIBUTING.rst>`_ documentation :)
 

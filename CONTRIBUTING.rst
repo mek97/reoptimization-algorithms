@@ -56,8 +56,8 @@ these guidelines:
     request.
 
     The repo uses `Github Actions <https://help.github.com/en/actions>`__ to
-    run the tests and `codecov <https://codecov.io/gh/mek97/repotimization-algorithms>`__ to track coverage.
-    Lets be considerate to the high code quality/test coverage
+    run the tests. You can set up on your fork if needed. It will help you make sure you do not
+    break the build with your PR.
 
 -   Strictly adhering PEP8 coding style guide.
 
@@ -79,4 +79,4 @@ these guidelines:
 Git Branches
 ------------
 
-All new development happens in the ``master`` branch. All PRs should target that branch.
+``master`` branch is the stable branch. All PRs should target ``release`` branch.
