@@ -69,9 +69,9 @@ these guidelines:
     of the same PR. Doc string is often sufficient. Make sure to follow the
     Sphinx compatible standards.
 
--   Run tests locally before opening PR.
+-   Run tests locally before opening PR. Tests can be run via ``tox -e py37`` for python 3.7 env and similarly for 3.6 anf 3.8
 
--   Make sure the pull request works for Python 3.7.
+-   Make sure the pull request works for Python 3.6, 3.7 and 3.8.
 
 -   Adhere to guidelines for commit messages described in this `article <http://chris.beams.io/posts/git-commit/>`__.
     This makes the lives of those who come after you a lot easier.
