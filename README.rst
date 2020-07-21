@@ -12,7 +12,7 @@ Goal/Features
 Currently, considerable efforts must be put to find optimal solution for NP-Hard problems.
 Reoptimisation deals with, If given an optimal solution to a problem instance I\ :sub:`O`,
 can we find a good approximated solution to instance I\ :sub:`N`, where I\ :sub:`N` is I\ :sub:`O` with some 'local' modifications?
-The goal in this repository is to expose some well known reoptimisation algorithms.
+The goal in this repository is to expose some well known reoptimization algorithms.
 
 Notable references
 ~~~~~~~~~~~~~~~~~~
@@ -84,5 +84,5 @@ Installation Command
 Contribution
 ============
 
-Want to add or improvise the repository? Check out the `Contributing <https://github.com/mek97/repotimization-algorithms/blob/master/CONTRIBUTING.rst>`_ documentation :)
+Want to add or improvise the repository? Check out the `Contributing <https://github.com/mek97/repotimization-algorithms/blob/release-v0/CONTRIBUTING.rst>`_ documentation :)
 

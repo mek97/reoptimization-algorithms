@@ -13,7 +13,7 @@ Make sure to add a detailed doc in ``docs/`` with official references, preferabl
 Report Bugs
 -----------
 
-Report bugs through `GitHub Issues <https://https://github.com/mek97/repotimization-algorithms/issues>`__.
+Report bugs through `GitHub Issues <https://github.com/mek97/repotimization-algorithms/issues/>`__.
 
 Please report relevant information and preferably code that exhibits the problem.
 
@@ -38,7 +38,7 @@ articles.
 Submit Feedback
 ---------------
 
-The best way to send feedback is to `open an issue on GitHub <https://https://github.com/mek97/repotimization-algorithms/issues/new/choose>`__.
+The best way to send feedback is to `open an issue on GitHub <https://github.com/mek97/repotimization-algorithms/issues>`__.
 
 If you are proposing a new feature:
 
@@ -79,4 +79,4 @@ these guidelines:
 Git Branches
 ------------
 
-``master`` branch is the stable branch. All PRs should target ``release`` branch.
+``master`` branch is the stable branch. All PRs should target ``release-v*`` branch.
