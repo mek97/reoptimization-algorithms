@@ -17,7 +17,7 @@ setup(
 
     long_description_content_type='text/x-rst',  # Optional (see note above)
 
-    url='https://github.com/mek97/repotimization-algorithms',  # Optional
+    url='https://github.com/mek97/reoptimization-algorithms',  # Optional
 
     author='Mehul Kumar',  # Optional
 
@@ -52,7 +52,7 @@ setup(
     entry_points={
     },
     project_urls={  # Optional
-        'Bug Reports': 'https://github.com/mek97/repotimization-algorithms/issues',
-        'Source': 'https://github.com/mek97/repotimization-algorithms',
+        'Bug Reports': 'https://github.com/mek97/reoptimization-algorithms/issues',
+        'Source': 'https://github.com/mek97/reoptimization-algorithms',
     },
 )
