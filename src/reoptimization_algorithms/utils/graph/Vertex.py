@@ -1,6 +1,6 @@
 from typing import Dict
 
-from reoptimizations_algorithms.utils.graph.Edge import Edge
+from reoptimization_algorithms.utils.graph.Edge import Edge
 
 
 class Vertex:
