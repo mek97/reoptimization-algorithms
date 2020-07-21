@@ -1,5 +1,5 @@
 ---
-Make sure to mark the boxes below before creating PR: [x]
+Mark the boxes as [x] for ticking
 
 - [ ] Code follows the style guidelines of this project
 - [ ] Description above provides context of the change
@@ -7,5 +7,6 @@ Make sure to mark the boxes below before creating PR: [x]
 - [ ] Target Github ISSUE in description if exists
 - [ ] Commits follow "[How to write a good git commit message](http://chris.beams.io/posts/git-commit/)"
 - [ ] Relevant documentation is updated including usage instructions.
+- [ ] In any backwards incompatibilities, they are updated in [UPDATING.md](https://github.com/mek97/repotimization-algorithms/blob/master/UPDATING.md).
 
-In case of backwards incompatible changes please leave a note in [UPDATING.md](https://github.com/mek97/repotimization-algorithms/blob/master/UPDATING.md).
+

@@ -79,4 +79,4 @@ these guidelines:
 Git Branches
 ------------
 
-All new development happens in the ``master`` branch. All PRs should target that branch.
+All new development happens in the ``master`` branch. All PRs should target that branch. Push the changes
