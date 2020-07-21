@@ -7,6 +7,6 @@ Mark the boxes as [x] for ticking
 - [ ] Target Github ISSUE in description if exists
 - [ ] Commits follow "[How to write a good git commit message](http://chris.beams.io/posts/git-commit/)"
 - [ ] Relevant documentation is updated including usage instructions.
-- [ ] In any backwards incompatibilities, they are updated in [UPDATING.md](https://github.com/mek97/repotimization-algorithms/blob/master/UPDATING.md).
+- [ ] In any backwards incompatibilities, they are updated in [UPDATING.md](https://github.com/mek97/reoptimization-algorithms/blob/master/UPDATING.md).
 
 
