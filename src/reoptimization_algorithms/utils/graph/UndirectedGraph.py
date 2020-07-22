@@ -1,8 +1,8 @@
 from typing import Dict, List
 
-from reoptimizations_algorithms.utils.graph import Edge
-from reoptimizations_algorithms.utils.graph.Graph import Graph
-from reoptimizations_algorithms.utils.graph.Vertex import Vertex
+from reoptimization_algorithms.utils.graph import Edge
+from reoptimization_algorithms.utils.graph.Graph import Graph
+from reoptimization_algorithms.utils.graph.Vertex import Vertex
 
 
 class UndirectedGraph(Graph):

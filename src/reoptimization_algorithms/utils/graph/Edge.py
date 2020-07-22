@@ -1,4 +1,4 @@
-from reoptimizations_algorithms.utils.graph.BaseEdge import BaseEdge
+from reoptimization_algorithms.utils.graph.BaseEdge import BaseEdge
 
 
 class Edge(BaseEdge):

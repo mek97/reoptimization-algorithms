@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-from reoptimizations_algorithms.utils.graph import Vertex, Edge
+from reoptimization_algorithms.utils.graph import Vertex, Edge
 
 
 class BaseGraph(metaclass=ABCMeta):

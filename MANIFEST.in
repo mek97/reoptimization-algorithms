@@ -13,3 +13,5 @@ include *.md
 recursive-include data *
 recursive-include src *.py
 recursive-include tests *.py
+recursive-include docs *.keep
+recursive-include images *.png
