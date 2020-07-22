@@ -58,7 +58,7 @@ Graph Data structure
 
 Algorirhms
 ~~~~~~~~~~
- `TBD`
+ `WIP`
 
 
 Usage
@@ -67,7 +67,7 @@ Usage
 Requirements
 ~~~~~~~~~~~~
 
-* Python versions: 3.6, 3.7, 3.8
+* Python versions: >=3.6, <=3.8
 
 Installation Command
 ~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +77,7 @@ Installation Command
 
   To Install the stable latest package from pypi host
 
-    `TBD`
+    `WIP`
 
 * Option 2
 
