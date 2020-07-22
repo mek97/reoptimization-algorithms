@@ -9,7 +9,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='repotimization-algorithms',  # Required
+    name='reoptimization-algorithms',  # Required
     version='0.0.1',  # Required
     description='Contains famous Reoptimization algorithms',  # Optional
 
@@ -17,14 +17,13 @@ setup(
 
     long_description_content_type='text/x-rst',  # Optional (see note above)
 
-    url='https://github.com/mek97/repotimization-algorithms',  # Optional
+    url='https://github.com/mek97/reoptimization-algorithms',  # Optional
 
     author='Mehul Kumar',  # Optional
 
     author_email='mehul.k1997@gmail.com',  # Optional
 
     classifiers=[  # Optional
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
@@ -36,9 +35,9 @@ setup(
 
     packages=find_packages(where='src'),  # Required
 
-    python_requires='>=3.5',
+    python_requires='>=3.6',
 
-    install_requires=['pandas', 'scipy', 'numpy'],  # Optional
+    install_requires=[],  # Optional
 
     extras_require={  # Optional
         'dev': ['check-manifest'],
@@ -46,7 +45,6 @@ setup(
     },
 
     package_data={  # Optional
-        'repotimization-algorithms': ['package_data.dat'],
     },
 
     data_files=[],  # Optional
@@ -54,7 +52,7 @@ setup(
     entry_points={
     },
     project_urls={  # Optional
-        'Bug Reports': 'https://github.com/mek97/repotimization-algorithms/issues',
-        'Source': 'https://github.com/mek97/repotimization-algorithms',
+        'Bug Reports': 'https://github.com/mek97/reoptimization-algorithms/issues',
+        'Source': 'https://github.com/mek97/reoptimization-algorithms',
     },
 )

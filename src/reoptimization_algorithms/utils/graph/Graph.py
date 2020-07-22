@@ -1,9 +1,9 @@
 from abc import ABC
 from typing import Dict, List
 
-from reoptimizations_algorithms.utils.graph import Edge
-from reoptimizations_algorithms.utils.graph.BaseGraph import BaseGraph
-from reoptimizations_algorithms.utils.graph.Vertex import Vertex
+from reoptimization_algorithms.utils.graph import Edge
+from reoptimization_algorithms.utils.graph.BaseGraph import BaseGraph
+from reoptimization_algorithms.utils.graph.Vertex import Vertex
 
 
 class Graph(BaseGraph, ABC):
