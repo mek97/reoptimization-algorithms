@@ -1,4 +1,4 @@
-from reoptimization_algorithms.utils.graph.UndirectedGraph import UndirectedGraph
+from reoptimization_algorithms import UndirectedGraph
 
 
 class TestUndirectedGraph:

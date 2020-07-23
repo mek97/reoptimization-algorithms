@@ -1,9 +1,12 @@
+import copy
 from abc import ABC
-from typing import Dict, List
+from typing import Dict, List, TypeVar
 
-from reoptimization_algorithms.utils.graph import Edge
-from reoptimization_algorithms.utils.graph.BaseGraph import BaseGraph
-from reoptimization_algorithms.utils.graph.Vertex import Vertex
+from reoptimization_algorithms.utils.graph.base_graph import BaseGraph
+from reoptimization_algorithms.utils.graph.edge import Edge
+from reoptimization_algorithms.utils.graph.vertex import Vertex
+
+T = TypeVar('T', bound='Graph')
 
 
 class Graph(BaseGraph, ABC):
@@ -53,7 +56,7 @@ class Graph(BaseGraph, ABC):
 
         return self._graph.get(vertex)
 
-    def add_vertex(self, vertex: str, weight: int = None) -> 'Graph':
+    def add_vertex(self: T, vertex: str, weight: int = None) -> T:
         """
         Adds a vertex to the graph, default weight as Vertex.DEFAULT_VERTEX_WEIGHT
         :param vertex:
@@ -66,7 +69,7 @@ class Graph(BaseGraph, ABC):
         self._graph[vertex] = Vertex(vertex, weight)
         return self
 
-    def delete_vertex(self, vertex: str) -> 'Graph':
+    def delete_vertex(self: T, vertex: str) -> T:
         """
         Deletes a vertex
         :param vertex:
@@ -79,7 +82,7 @@ class Graph(BaseGraph, ABC):
         self._graph.pop(vertex)
         return self
 
-    def update_vertex(self, vertex: str, weight: int) -> 'Graph':
+    def update_vertex(self: T, vertex: str, weight: int) -> T:
         """
         Updates vertex weight
         :param vertex:
@@ -108,7 +111,7 @@ class Graph(BaseGraph, ABC):
                 self.delete_vertex(vertex)
         return vertices
 
-    def delete_isolated_vertices(self) -> 'Graph':
+    def delete_isolated_vertices(self: T) -> T:
         """
         Deletes isolated vertices
         :return:
@@ -135,7 +138,7 @@ class Graph(BaseGraph, ABC):
         """
         return self.get_vertex(source).get_neighbour(destination)
 
-    def add_edge(self, source: str, destination: str, weight: int = None) -> 'Graph':
+    def add_edge(self: T, source: str, destination: str, weight: int = None) -> T:
         """
         Adds an edge in the graph, default weight as Edge.DEFAULT_EDGE_WEIGHT
         :param source:
@@ -155,7 +158,7 @@ class Graph(BaseGraph, ABC):
         self.get_vertex(source).add_neighbour(destination, weight)
         return self
 
-    def delete_edge(self, source: str, destination: str) -> 'Graph':
+    def delete_edge(self: T, source: str, destination: str) -> T:
         """
         Deletes edge from the graph
         :param source:
@@ -165,7 +168,7 @@ class Graph(BaseGraph, ABC):
         self.get_vertex(source).delete_neighbour(destination)
         return self
 
-    def update_edge(self, source: str, destination: str, weight: int) -> 'Graph':
+    def update_edge(self: T, source: str, destination: str, weight: int) -> T:
         """
         Updates edge weight
         :param source:
@@ -176,7 +179,7 @@ class Graph(BaseGraph, ABC):
         self.get_vertex(source).add_neighbour(destination, weight)
         return self
 
-    def get_edges(self) -> List['Edge']:
+    def get_edges(self) -> List[Dict]:
         """
         Gets list of Edges
         :return:
@@ -188,3 +191,12 @@ class Graph(BaseGraph, ABC):
                 edges.append(vars(vertex_obj.neighbours[destination]))
 
         return edges
+
+    def copy(self: T) -> T:
+        return copy.deepcopy(self)
+
+    def graph_union(self: T, attach_graph: T, attach_edges: List['Edge']) -> T:
+        graph = Graph(copy.deepcopy({**self.graph, **attach_graph.graph}))
+        for edge in attach_edges:
+            graph.add_edge(edge.source, edge.destination, edge.weight)
+        return graph

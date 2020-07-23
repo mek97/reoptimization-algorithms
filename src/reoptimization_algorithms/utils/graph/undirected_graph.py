@@ -1,8 +1,8 @@
+from copy import deepcopy
 from typing import Dict, List
 
-from reoptimization_algorithms.utils.graph import Edge
-from reoptimization_algorithms.utils.graph.Graph import Graph
-from reoptimization_algorithms.utils.graph.Vertex import Vertex
+from reoptimization_algorithms.utils.graph.graph import Graph
+from reoptimization_algorithms.utils.graph.vertex import Vertex
 
 
 class UndirectedGraph(Graph):
@@ -26,7 +26,7 @@ class UndirectedGraph(Graph):
         """
         return super().is_edge_exists(vertex_1, vertex_2) and super().is_edge_exists(vertex_2, vertex_1)
 
-    def update_edge(self, vertex_1: str, vertex_2: str, weight: int) -> 'Graph':
+    def update_edge(self, vertex_1: str, vertex_2: str, weight: int) -> 'UndirectedGraph':
         """
         Updates edge weight
         :param vertex_1:
@@ -42,7 +42,7 @@ class UndirectedGraph(Graph):
 
         return self
 
-    def delete_edge(self, vertex_1: str, vertex_2: str) -> 'Graph':
+    def delete_edge(self, vertex_1: str, vertex_2: str) -> 'UndirectedGraph':
         """
         Deletes an edge
         :param vertex_1:
@@ -57,7 +57,7 @@ class UndirectedGraph(Graph):
 
         return self
 
-    def add_edge(self, vertex_1: str, vertex_2: str, weight: int = None) -> 'Graph':
+    def add_edge(self, vertex_1: str, vertex_2: str, weight: int = None) -> 'UndirectedGraph':
         """
         Adds an edge
         :param vertex_1:
@@ -73,7 +73,7 @@ class UndirectedGraph(Graph):
 
         return self
 
-    def get_edges(self) -> List['Edge']:
+    def get_edges(self) -> List[Dict]:
         """
         Gets edges in the graph
         :return:
@@ -81,3 +81,24 @@ class UndirectedGraph(Graph):
         edges = super().get_edges()
 
         return edges
+
+    def display(self):
+        vertices = self.get_vertices()
+        v_li = []
+        for vertex_key in vertices:
+            vv = vars(deepcopy(self.get_vertex(vertex_key)))
+            for key in vv:
+                if isinstance(vv[key], dict):
+                    for k in vv[key]:
+                        vv[key][k] = vars(vv[key][k])
+            v_li.append(vv)
+        edges = self.get_edges()
+        n_set = set()
+        e_li = []
+        for edge in edges:
+            key = "::".join(sorted([edge["_source"], edge["_destination"]]))
+            if key not in n_set:
+                n_set.add(key)
+                e_li.append(edge)
+
+        return {"vertices": v_li, "edges": e_li}

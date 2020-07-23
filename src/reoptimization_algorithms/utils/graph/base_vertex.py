@@ -1,6 +1,6 @@
 from abc import ABCMeta
 
-from reoptimization_algorithms.utils.graph import BaseEdge
+from reoptimization_algorithms.utils.graph.base_edge import BaseEdge
 
 
 class BaseVertex(metaclass=ABCMeta):
