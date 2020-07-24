@@ -10,7 +10,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='reoptimization-algorithms',  # Required
-    version='0.0.1',  # Required
+    version='0.0.1.rc.1',  # Required
     description='Contains famous Reoptimization algorithms',  # Optional
 
     long_description=long_description,  # Optional
