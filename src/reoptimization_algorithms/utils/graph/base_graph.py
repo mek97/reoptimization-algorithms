@@ -1,6 +1,11 @@
+"""
+Base Graph abstract class
+"""
+
 from abc import ABCMeta, abstractmethod
 
-from reoptimization_algorithms.utils.graph import Vertex, Edge
+from reoptimization_algorithms.utils.graph.vertex import Vertex
+from reoptimization_algorithms.utils.graph.edge import Edge
 
 
 class BaseGraph(metaclass=ABCMeta):

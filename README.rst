@@ -2,7 +2,7 @@
 Reoptimization Algorithms
 *************************
 
-This package implements some well known Reoptimization algorithms
+Package implementing some well known Reoptimization algorithms
 
 .. image:: images/header.png
 
@@ -11,7 +11,7 @@ This package implements some well known Reoptimization algorithms
 
 .. contents:: **Table of contents**
 
-
+=============
 Goal/Features
 =============
 Currently, considerable efforts must be put to find optimal solution for NP-Hard problems.
@@ -33,9 +33,7 @@ Approximation algorithms
 * `Approximation algorithms Wikipedia <https://en.wikipedia.org/wiki/Approximation_algorithm>`_
 
 
-
-
-
+==============
 Implementation
 ==============
 
@@ -58,10 +56,12 @@ Graph Data structure
 
 Algorirhms
 ~~~~~~~~~~
- `WIP`
+* PTAS for Reoptimization of un weighted k - path vertex cover under constant size graph insertion
 
 
-Usage
+
+=====
+Setup
 =====
 
 Requirements
@@ -69,8 +69,8 @@ Requirements
 
 * Python versions: >=3.6, <=3.8
 
-Installation Command
-~~~~~~~~~~~~~~~~~~~~
+Installation
+~~~~~~~~~~~~
 
 
 * Option 1
@@ -86,6 +86,7 @@ Installation Command
     ``python setup.py install``
 
 
+============
 Contribution
 ============
 

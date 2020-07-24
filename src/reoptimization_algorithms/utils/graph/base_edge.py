@@ -1,3 +1,7 @@
+"""
+Base Edge abstract class
+"""
+
 from abc import ABCMeta
 
 

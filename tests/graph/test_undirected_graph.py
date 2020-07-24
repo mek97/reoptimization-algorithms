@@ -1,4 +1,4 @@
-from reoptimization_algorithms.utils.graph.UndirectedGraph import UndirectedGraph
+from reoptimization_algorithms import UndirectedGraph
 
 
 class TestUndirectedGraph:
@@ -12,5 +12,7 @@ class TestUndirectedGraph:
                                             {'_source': '40', '_destination': '50', '_weight': 1},
                                             {'_source': '50', '_destination': '40', '_weight': 1},
                                             {'_source': '8', '_destination': '4', '_weight': 1}])])
+
+        print(test_undirected_graph.graph_pretty())
 
         assert all([a == b for a, b in zip(test_undirected_graph.get_vertices(), ['4', '5', '40', '50', '8', '99'])])
