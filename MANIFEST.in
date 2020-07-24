@@ -21,3 +21,17 @@ recursive-include docs *.rst
 recursive-include docs *.bat
 recursive-include docs Makefile
 recursive-include docs *.nojekyll
+recursive-include docs *.buildinfo
+recursive-include docs *.doctree
+recursive-include docs *.eot
+recursive-include docs *.html
+recursive-include docs *.inv
+recursive-include docs *.js
+recursive-include docs *.otf
+recursive-include docs *.pickle
+recursive-include docs *.png
+recursive-include docs *.svg
+recursive-include docs *.ttf
+recursive-include docs *.txt
+recursive-include docs *.woff
+recursive-include docs *.woff2
