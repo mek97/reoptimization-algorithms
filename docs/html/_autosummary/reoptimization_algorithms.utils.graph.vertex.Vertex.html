@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>reoptimization_algorithms.utils.graph.vertex.Vertex &mdash; Reoptimization Algorithms 0.0.1.rc.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="reoptimization_algorithms.UnweightedPVCP" href="reoptimization_algorithms.UnweightedPVCP.html" />
+    <link rel="prev" title="reoptimization_algorithms.utils.graph.vertex" href="reoptimization_algorithms.utils.graph.vertex.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Reoptimization Algorithms
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reoptimization_algorithms.html">reoptimization_algorithms</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="reoptimization_algorithms.algorithms.html">reoptimization_algorithms.algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reoptimization_algorithms.errors.html">reoptimization_algorithms.errors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="reoptimization_algorithms.utils.html">reoptimization_algorithms.utils</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="reoptimization_algorithms.utils.graph.html">reoptimization_algorithms.utils.graph</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="reoptimization_algorithms.utils.graph.base_edge.html">reoptimization_algorithms.utils.graph.base_edge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reoptimization_algorithms.utils.graph.base_graph.html">reoptimization_algorithms.utils.graph.base_graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reoptimization_algorithms.utils.graph.base_vertex.html">reoptimization_algorithms.utils.graph.base_vertex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reoptimization_algorithms.utils.graph.edge.html">reoptimization_algorithms.utils.graph.edge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reoptimization_algorithms.utils.graph.graph.html">reoptimization_algorithms.utils.graph.graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reoptimization_algorithms.utils.graph.pvc.html">reoptimization_algorithms.utils.graph.pvc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reoptimization_algorithms.utils.graph.undirected_graph.html">reoptimization_algorithms.utils.graph.undirected_graph</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="reoptimization_algorithms.utils.graph.vertex.html">reoptimization_algorithms.utils.graph.vertex</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.UnweightedPVCP.html">reoptimization_algorithms.UnweightedPVCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.PVCUtils.html">reoptimization_algorithms.PVCUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.Graph.html">reoptimization_algorithms.Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.UndirectedGraph.html">reoptimization_algorithms.UndirectedGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.Vertex.html">reoptimization_algorithms.Vertex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.Edge.html">reoptimization_algorithms.Edge</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Reoptimization Algorithms</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="reoptimization_algorithms.html">reoptimization_algorithms</a> &raquo;</li>
+        
+          <li><a href="reoptimization_algorithms.utils.html">reoptimization_algorithms.utils</a> &raquo;</li>
+        
+          <li><a href="reoptimization_algorithms.utils.graph.html">reoptimization_algorithms.utils.graph</a> &raquo;</li>
+        
+          <li><a href="reoptimization_algorithms.utils.graph.vertex.html">reoptimization_algorithms.utils.graph.vertex</a> &raquo;</li>
+        
+      <li>reoptimization_algorithms.utils.graph.vertex.Vertex</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_autosummary/reoptimization_algorithms.utils.graph.vertex.Vertex.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reoptimization-algorithms-utils-graph-vertex-vertex">
+<h1>reoptimization_algorithms.utils.graph.vertex.Vertex<a class="headerlink" href="#reoptimization-algorithms-utils-graph-vertex-vertex" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="reoptimization_algorithms.utils.graph.vertex.Vertex">
+<em class="property">class </em><code class="sig-name descname">Vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">neighbours</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Edge<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#reoptimization_algorithms.utils.graph.vertex.Vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Vertex class having key, weight and adjacency dictionary of neighbours</p>
+<p><code class="docutils literal notranslate"><span class="pre">DEFAULT_VERTEX_WEIGHT</span></code> is set to 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Key</p></li>
+<li><p><strong>weight</strong> (<em>int</em>) – Weight of the vertex</p></li>
+<li><p><strong>neighbours</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="reoptimization_algorithms.Edge.html#reoptimization_algorithms.Edge" title="reoptimization_algorithms.Edge"><em>Edge</em></a><em>]</em>) – Neighbours of the vertex</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_VERTEX_WEIGHT</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.key" title="reoptimization_algorithms.utils.graph.vertex.Vertex.key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">key</span></code></a></p></td>
+<td><p>Vertex key</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.neighbours" title="reoptimization_algorithms.utils.graph.vertex.Vertex.neighbours"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbours</span></code></a></p></td>
+<td><p>Neighbouring vertices</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.weight" title="reoptimization_algorithms.utils.graph.vertex.Vertex.weight"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weight</span></code></a></p></td>
+<td><p>Vertex weight</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.vertex.Vertex.add_neighbour">
+<code class="sig-name descname">add_neighbour</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">neighbour</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#reoptimization_algorithms.utils.graph.vertex.Vertex" title="reoptimization_algorithms.utils.graph.vertex.Vertex">reoptimization_algorithms.utils.graph.vertex.Vertex</a><a class="headerlink" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.add_neighbour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a neighbour, default edge weight as DEFAULT_EDGE_WEIGHT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>neighbour</strong> (<em>str</em>) – Neighbour vertex key</p></li>
+<li><p><strong>weight</strong> (<em>int</em>) – Edge weight</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.vertex.Vertex.degree">
+<code class="sig-name descname">degree</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.degree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets degree of the vertex</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Degree of the vertex</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.vertex.Vertex.delete_neighbour">
+<code class="sig-name descname">delete_neighbour</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">neighbour</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="reoptimization_algorithms.utils.graph.edge.Edge.html#reoptimization_algorithms.utils.graph.edge.Edge" title="reoptimization_algorithms.utils.graph.edge.Edge">reoptimization_algorithms.utils.graph.edge.Edge</a><a class="headerlink" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.delete_neighbour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a neighbour</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>neighbour</strong> (<em>str</em>) – Neighbour vertex key</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Deleted Edge</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.vertex.Vertex.get_neighbour">
+<code class="sig-name descname">get_neighbour</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">neighbour</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="reoptimization_algorithms.utils.graph.edge.Edge.html#reoptimization_algorithms.utils.graph.edge.Edge" title="reoptimization_algorithms.utils.graph.edge.Edge">reoptimization_algorithms.utils.graph.edge.Edge</a><a class="headerlink" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.get_neighbour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a neighbour</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>neighbour</strong> (<em>str</em>) – Neighbour vertex key</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Edge representing the neighbour</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.vertex.Vertex.is_neighbour_exists">
+<code class="sig-name descname">is_neighbour_exists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">neighbour</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.is_neighbour_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if neighbour exists</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>neighbour</strong> (<em>str</em>) – Neighbour vertex key</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.vertex.Vertex.key">
+<em class="property">property </em><code class="sig-name descname">key</code><a class="headerlink" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertex key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.vertex.Vertex.neighbours">
+<em class="property">property </em><code class="sig-name descname">neighbours</code><a class="headerlink" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.neighbours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Neighbouring vertices</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary of neighbouring vertices as keys and values as edges</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.vertex.Vertex.update_neighbour">
+<code class="sig-name descname">update_neighbour</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">neighbour</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#reoptimization_algorithms.utils.graph.vertex.Vertex" title="reoptimization_algorithms.utils.graph.vertex.Vertex">reoptimization_algorithms.utils.graph.vertex.Vertex</a><a class="headerlink" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.update_neighbour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a neighbour</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>neighbour</strong> (<em>str</em>) – Neighbour vertex key</p></li>
+<li><p><strong>weight</strong> (<em>int</em>) – Edge weight to update</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.vertex.Vertex.update_weight">
+<code class="sig-name descname">update_weight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#reoptimization_algorithms.utils.graph.vertex.Vertex" title="reoptimization_algorithms.utils.graph.vertex.Vertex">reoptimization_algorithms.utils.graph.vertex.Vertex</a><a class="headerlink" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.update_weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates vertex weight</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>weight</strong> (<em>int</em>) – Vertex weight</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.vertex.Vertex.weight">
+<em class="property">property </em><code class="sig-name descname">weight</code><a class="headerlink" href="#reoptimization_algorithms.utils.graph.vertex.Vertex.weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertex weight</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="reoptimization_algorithms.UnweightedPVCP.html" class="btn btn-neutral float-right" title="reoptimization_algorithms.UnweightedPVCP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="reoptimization_algorithms.utils.graph.vertex.html" class="btn btn-neutral float-left" title="reoptimization_algorithms.utils.graph.vertex" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Mehul Kumar
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>reoptimization_algorithms.UnweightedPVCP &mdash; Reoptimization Algorithms 0.0.1.rc.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="reoptimization_algorithms.PVCUtils" href="reoptimization_algorithms.PVCUtils.html" />
+    <link rel="prev" title="reoptimization_algorithms.utils.graph.vertex.Vertex" href="reoptimization_algorithms.utils.graph.vertex.Vertex.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Reoptimization Algorithms
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.html">reoptimization_algorithms</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">reoptimization_algorithms.UnweightedPVCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.PVCUtils.html">reoptimization_algorithms.PVCUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.Graph.html">reoptimization_algorithms.Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.UndirectedGraph.html">reoptimization_algorithms.UndirectedGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.Vertex.html">reoptimization_algorithms.Vertex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reoptimization_algorithms.Edge.html">reoptimization_algorithms.Edge</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Reoptimization Algorithms</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>reoptimization_algorithms.UnweightedPVCP</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_autosummary/reoptimization_algorithms.UnweightedPVCP.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reoptimization-algorithms-unweightedpvcp">
+<h1>reoptimization_algorithms.UnweightedPVCP<a class="headerlink" href="#reoptimization-algorithms-unweightedpvcp" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="reoptimization_algorithms.UnweightedPVCP">
+<em class="property">class </em><code class="sig-name descname">UnweightedPVCP</code><a class="headerlink" href="#reoptimization_algorithms.UnweightedPVCP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class containing reoptimization algorithms of unweighted path vertex cover</p>
+<dl class="py method">
+<dt id="reoptimization_algorithms.UnweightedPVCP.reoptimize_ptas">
+<em class="property">static </em><code class="sig-name descname">reoptimize_ptas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">old_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.html#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph" title="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph">reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph</a></span></em>, <em class="sig-param"><span class="n">attach_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.html#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph" title="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph">reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph</a></span></em>, <em class="sig-param"><span class="n">attach_edges</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Edge<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">old_solution</span><span class="p">:</span> <span class="n">Set<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">epsilon</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.25</span></em><span class="sig-paren">)</span> &#x2192; Set<span class="p">[</span>str<span class="p">]</span><a class="headerlink" href="#reoptimization_algorithms.UnweightedPVCP.reoptimize_ptas" title="Permalink to this definition">¶</a></dt>
+<dd><p><span class="math notranslate nohighlight">\((1+\epsilon)\)</span> PTAS approximation for reoptimization of  unweighted k path vertex cover under constant size graph insertion</p>
+<blockquote>
+<div><p>For formalisms and algorithm details refer - <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-030-26176-4_30#:~:text=The%20objective%20in%20k%2Dpath,cover%20problem%20admits%20a%20PTAS.">Reoptimization of Path Vertex Cover Problem</a></p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>old_graph</strong> (<em>List</em><em>[</em><a class="reference internal" href="reoptimization_algorithms.Edge.html#reoptimization_algorithms.Edge" title="reoptimization_algorithms.Edge"><em>Edge</em></a><em>]</em>) – Old graph</p></li>
+<li><p><strong>attach_graph</strong> (<a class="reference internal" href="reoptimization_algorithms.UndirectedGraph.html#reoptimization_algorithms.UndirectedGraph" title="reoptimization_algorithms.UndirectedGraph"><em>UndirectedGraph</em></a>) – Constant size graph which is to be inserted</p></li>
+<li><p><strong>attach_edges</strong> (<em>List</em><em>[</em><em>'Edge'</em><em>]</em>) – Edges connecting the old graph and attach graph</p></li>
+<li><p><strong>old_solution</strong> (<em>Set</em><em>[</em><em>str</em><em>]</em>) – Vertices denoting k-PVCP Solution to old graph</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – length of paths to cover</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – epsilon in <span class="math notranslate nohighlight">\((1+\epsilon)\)</span> PTAS  approximation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Set of vertices</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reoptimization_algortihms</span> <span class="kn">import</span> <span class="n">UnweightedPVCP</span>
+
+<span class="n">old_graph</span> <span class="o">=</span> <span class="p">(</span><span class="n">UndirectedGraph</span><span class="p">()</span><span class="o">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;40&quot;</span><span class="p">,</span> <span class="s2">&quot;50&quot;</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="s2">&quot;6&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="s2">&quot;99&quot;</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">delete_vertex</span><span class="p">(</span><span class="s2">&quot;6&quot;</span><span class="p">))</span>
+<span class="n">attached_graph</span> <span class="o">=</span> <span class="n">UndirectedGraph</span><span class="p">()</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;90&quot;</span><span class="p">,</span> <span class="s2">&quot;95&quot;</span><span class="p">)</span>
+<span class="n">attach_edges</span> <span class="o">=</span> <span class="p">[</span><span class="n">Edge</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;90&quot;</span><span class="p">)]</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">UnweightedPVCP</span><span class="o">.</span><span class="n">reoptimize_ptas</span><span class="p">(</span><span class="n">old_graph</span><span class="p">,</span> <span class="n">attached_graph</span><span class="p">,</span> <span class="n">attach_edges</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;8&quot;</span><span class="p">},</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span> <span class="c1"># {&quot;4&quot;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="reoptimization_algorithms.PVCUtils.html" class="btn btn-neutral float-right" title="reoptimization_algorithms.PVCUtils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="reoptimization_algorithms.utils.graph.vertex.Vertex.html" class="btn btn-neutral float-left" title="reoptimization_algorithms.utils.graph.vertex.Vertex" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Mehul Kumar
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
