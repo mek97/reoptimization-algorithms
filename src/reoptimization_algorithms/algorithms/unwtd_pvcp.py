@@ -1,3 +1,7 @@
+"""
+Unweighted Path vertex cover reoptimization algorithms class
+"""
+
 from itertools import combinations, chain
 from math import ceil
 from typing import Set, List
@@ -8,19 +12,47 @@ from reoptimization_algorithms.utils.graph.undirected_graph import UndirectedGra
 
 
 class UnweightedPVCP:
+    """
+    Class containing reoptimization algorithms of unweighted path vertex cover
+    """
 
     @staticmethod
-    def reoptimize(old_graph: 'UndirectedGraph', attach_graph: 'UndirectedGraph', attach_edges: List['Edge'],
-                   old_solution: Set[str], k: int, epsilon=0.25) -> Set[str]:
+    def reoptimize_ptas(old_graph: 'UndirectedGraph', attach_graph: 'UndirectedGraph', attach_edges: List['Edge'],
+                        old_solution: Set[str], k: int, epsilon: float = 0.25) -> Set[str]:
         """
-        PTAS for unweighted k path vertex cover under constant graph addition
-        :param attach_edges:
-        :param attach_graph:
-        :param old_graph:
-        :param old_solution:
-        :param k:
-        :param epsilon:
-        :return:
+        :math:`(1+\\epsilon)` PTAS approximation for reoptimization of  unweighted k path vertex cover under constant size graph insertion
+
+         For formalisms and algorithm details refer - `Reoptimization of Path Vertex Cover Problem <https://link.springer.com/chapter/10.1007/978-3-030-26176-4_30#:~:text=The%20objective%20in%20k%2Dpath,cover%20problem%20admits%20a%20PTAS.>`_
+
+        :param old_graph: Old graph
+        :type old_graph: List[Edge]
+        :param attach_graph: Constant size graph which is to be inserted
+        :type attach_graph: UndirectedGraph
+        :param attach_edges: Edges connecting the old graph and attach graph
+        :type attach_edges: List['Edge']
+        :param old_solution: Vertices denoting k-PVCP Solution to old graph
+        :type old_solution: Set[str]
+        :param k: length of paths to cover
+        :type k: int
+        :param epsilon: epsilon in :math:`(1+\\epsilon)` PTAS  approximation
+        :type epsilon: float
+
+        :return: Set of vertices
+
+        Example
+        ~~~~~~~
+
+        .. code-block:: python
+
+            from reoptimization_algortihms import UnweightedPVCP
+
+            old_graph = (UndirectedGraph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
+                     .add_vertex("6").add_edge("4", "8").add_vertex("99")
+                     .delete_vertex("6"))
+            attached_graph = UndirectedGraph().add_edge("90", "95")
+            attach_edges = [Edge("4", "90")]
+            solution = UnweightedPVCP.reoptimize_ptas(old_graph, attached_graph, attach_edges, {"8"}, 3)
+            print(solution) # {"4"}
         """
         v_o = set(old_graph.get_vertices())
         new_graph = old_graph.graph_union(attach_graph, attach_edges)

@@ -1,10 +1,40 @@
+"""
+Edge class
+
+"""
+
 from reoptimization_algorithms.utils.graph.base_edge import BaseEdge
 
 
 class Edge(BaseEdge):
+    """
+    Edge class represented as source, destination and weight attributes
+
+    ``DEFAULT_EDGE_WEIGHT`` is set to 1
+
+    :param source: Source vertex key
+    :type source: str
+    :param destination: Destination vertex key
+    :type destination: str
+    :param weight: Weight
+    :type weight: int
+    """
+
     DEFAULT_EDGE_WEIGHT = 1
 
     def __init__(self, source: str, destination: str, weight=None):
+        """
+        Edge class represented as source, destination and weight attributes
+
+        If weight is None then assign DEFAULT_EDGE_WEIGHT
+
+        :param source: Source vertex key
+        :type source: str
+        :param destination: Destination vertex key
+        :type destination: str
+        :param weight: Weight
+        :type weight: int
+        """
         self._source = source
         self._destination = destination
         if weight is None:
@@ -14,16 +44,17 @@ class Edge(BaseEdge):
     @property
     def source(self) -> str:
         """
-        source getter
-        :return:
+        Source vertex key
         """
         return self._source
 
     @source.setter
     def source(self, source: str) -> None:
         """
-        source setter
-        :param source:
+        Source setter
+        :param source: Source vertex key
+        :type source: str
+
         :return:
         """
         self._source = source
@@ -31,16 +62,17 @@ class Edge(BaseEdge):
     @property
     def destination(self) -> str:
         """
-        destination getter
-        :return:
+        Destination vertex key
         """
         return self._destination
 
     @destination.setter
     def destination(self, destination: str) -> None:
         """
-        destination setter
-        :param destination:
+        Destination setter
+        :param destination: Destination vertex key
+        :type destination: str
+
         :return:
         """
         self._destination = destination
@@ -48,16 +80,17 @@ class Edge(BaseEdge):
     @property
     def weight(self) -> int:
         """
-        weight getter
-        :return:
+        Edge weight
         """
         return self._weight
 
     @weight.setter
     def weight(self, weight: int) -> None:
         """
-        weight setter
-        :param weight:
+        Edge weight setter
+        :param weight: Edge weight
+        :type weight: int
+
         :return:
         """
         self._weight = weight

@@ -1,3 +1,7 @@
+"""
+Base Vertex abstract class
+"""
+
 from abc import ABCMeta
 
 from reoptimization_algorithms.utils.graph.base_edge import BaseEdge

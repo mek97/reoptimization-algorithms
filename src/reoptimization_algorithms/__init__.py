@@ -1,3 +1,7 @@
+"""
+Package implementing some well known Reoptimization algorithms
+"""
+
 from reoptimization_algorithms.algorithms.unwtd_pvcp import UnweightedPVCP  # noqa # pylint: disable=unused-import
 
 from reoptimization_algorithms.utils.graph.pvc import PVCUtils  # noqa # pylint: disable=unused-import

@@ -1,3 +1,7 @@
+"""
+Base Graph abstract class
+"""
+
 from abc import ABCMeta, abstractmethod
 
 from reoptimization_algorithms.utils.graph.vertex import Vertex

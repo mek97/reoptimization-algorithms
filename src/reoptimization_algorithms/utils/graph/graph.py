@@ -1,3 +1,7 @@
+"""
+Graph class
+"""
+
 import copy
 from abc import ABC
 from typing import Dict, List, TypeVar
@@ -10,11 +14,44 @@ T = TypeVar('T', bound='Graph')
 
 
 class Graph(BaseGraph, ABC):
+    """
+    Graph data structure class, represented as dictionary with vertices as key mapped to neighbouring vertices
+
+    T is a type var, bounded to this class, will refer to child class if inherited
+
+    :param graph: Graph definition, if None then empty graph is instantiated
+    :type graph: Dict[str, Vertex]
+
+
+    Example
+    ~~~~~~~
+
+    .. code-block:: python
+
+       from reoptimization_algortihms import Graph
+
+       graph = Graph()
+       graph = graph.add_vertex("4", 14) # Adding vertex
+       graph.get_vertex("4") # Getting vertex
+       graph = graph.update_vertex("4", 15) # Update vertex weight
+       graph = graph.delete_vertex("4") # Deleting vertex
+       graph = graph.add_edge("4", "5", 11) # Adding Edge
+       graph.get_edge("4", "5") # Getting Edge
+       graph = graph.update_edge("4", "5", 10) # Update Edge weight
+       graph = graph.delete_edge("4", "5") # Deleting Edge
+
+       # Add, Update and Deletes can be chained as follows
+       graph = (Graph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
+       .add_vertex("6").add_edge("4", "8").delete_edge("4", "5").add_vertex("99")
+       .delete_vertex("6"))
+    """
 
     def __init__(self, graph: Dict[str, 'Vertex'] = None):
         """
-        Graph data structure class, represented as dictionary with vertices as key mapped to neighbours vertices
-        :param graph: Graph definition
+        Graph data structure class, represented as dictionary with vertices as key mapped to neighbouring vertices
+
+        :param graph: Graph definition, if None then empty graph is instantiated
+        :type graph: Dict[str, Vertex]
         """
         if graph is None:
             graph = {}
@@ -23,8 +60,7 @@ class Graph(BaseGraph, ABC):
     @property
     def graph(self) -> Dict[str, 'Vertex']:
         """
-        Graph getter
-        :return:
+        Graph represented as dictionary with vertices as key mapped to neighbouring vertices
         """
         return self._graph
 
@@ -32,24 +68,32 @@ class Graph(BaseGraph, ABC):
     def graph(self, graph: Dict[str, 'Vertex']) -> None:
         """
         Graph setter
-        :param graph:
-        :return:
+
+        :param graph: Graph as dictionary of vertices to set
+        :type graph: Dict[str, Vertex]
+
+        :return: None
         """
         self._graph = graph
 
     def is_vertex_exists(self, vertex: str) -> bool:
         """
         Checks if the vertex exists in the graph
-        :param vertex:
-        :return:
+
+        :param vertex: key
+        :type vertex: str
+        :return: Boolean
         """
         return vertex in self._graph
 
     def get_vertex(self, vertex: str) -> 'Vertex':
         """
         Gets the vertex
-        :param vertex:
-        :return:
+
+        :param vertex: key
+        :type vertex: str
+
+        :return: Vertex
         """
         if not self.is_vertex_exists(vertex):
             raise Exception(f'Vertex {vertex} does not exists, create it first')
@@ -59,9 +103,13 @@ class Graph(BaseGraph, ABC):
     def add_vertex(self: T, vertex: str, weight: int = None) -> T:
         """
         Adds a vertex to the graph, default weight as Vertex.DEFAULT_VERTEX_WEIGHT
-        :param vertex:
-        :param weight:
-        :return:
+
+        :param vertex: Key
+        :type vertex: str
+        :param weight: Vertex weight
+        :type weight: int
+
+        :return: Self
         """
         if self.is_vertex_exists(vertex):
             raise Exception(f'Vertex {vertex} already exists, delete it first')
@@ -72,8 +120,11 @@ class Graph(BaseGraph, ABC):
     def delete_vertex(self: T, vertex: str) -> T:
         """
         Deletes a vertex
-        :param vertex:
-        :return:
+
+        :param vertex: Key
+        :type vertex: str
+
+        :return: Self
         """
         for v in self.get_vertices():
             vertex_obj = self.get_vertex(v)
@@ -85,9 +136,13 @@ class Graph(BaseGraph, ABC):
     def update_vertex(self: T, vertex: str, weight: int) -> T:
         """
         Updates vertex weight
-        :param vertex:
-        :param weight:
-        :return:
+
+        :param vertex: Key
+        :type vertex: str
+        :param weight: Vertex weight
+        :type weight: int
+
+        :return: Self
         """
         self.get_vertex(vertex).weight = weight
         return self
@@ -95,14 +150,16 @@ class Graph(BaseGraph, ABC):
     def get_vertices(self) -> List[str]:
         """
         Gets the list of vertices in the graph
-        :return:
+
+        :return: List of vertices keys
         """
         return list(self._graph.keys())
 
     def get_isolated_vertices(self) -> List['Vertex']:
         """
         Gets isolated vertices in the graph
-        :return:
+
+        :return: List of vertices
         """
         vertices = []
         for vertex in self.get_vertices():
@@ -114,7 +171,8 @@ class Graph(BaseGraph, ABC):
     def delete_isolated_vertices(self: T) -> T:
         """
         Deletes isolated vertices
-        :return:
+
+        :return: Self
         """
         for vertex in self.get_isolated_vertices():
             self.delete_vertex(vertex.key)
@@ -123,28 +181,41 @@ class Graph(BaseGraph, ABC):
     def is_edge_exists(self, source: str, destination: str) -> bool:
         """
         Checks if the edge exists in the graph
-        :param source:
-        :param destination:
-        :return:
+
+        :param source: Source
+        :type source: str
+        :param destination: Destination
+        :type destination: str
+
+        :return: Boolean
         """
         return self.is_vertex_exists(source) and self.get_vertex(source).is_neighbour_exists(destination)
 
     def get_edge(self, source: str, destination: str) -> 'Edge':
         """
-        Gets edge weight
-        :param source:
-        :param destination:
-        :return:
+        Checks if the edge exists in the graph
+
+        :param source: Source
+        :type source: str
+        :param destination: Destination
+        :type destination: str
+
+        :return: Edge
         """
         return self.get_vertex(source).get_neighbour(destination)
 
     def add_edge(self: T, source: str, destination: str, weight: int = None) -> T:
         """
-        Adds an edge in the graph, default weight as Edge.DEFAULT_EDGE_WEIGHT
-        :param source:
-        :param destination:
-        :param weight:
-        :return:
+        Checks if the edge exists in the graph
+
+        :param source: Source
+        :type source: str
+        :param destination: Destination
+        :type destination: str
+        :param weight: Weight
+        :type weight: int
+
+        :return: Self
         """
         if not self.is_vertex_exists(source):
             self.add_vertex(source)
@@ -160,21 +231,30 @@ class Graph(BaseGraph, ABC):
 
     def delete_edge(self: T, source: str, destination: str) -> T:
         """
-        Deletes edge from the graph
-        :param source:
-        :param destination:
-        :return:
+        Checks if the edge exists in the graph
+
+        :param source: Source
+        :type source: str
+        :param destination: Destination
+        :type destination: str
+
+        :return: Self
         """
         self.get_vertex(source).delete_neighbour(destination)
         return self
 
     def update_edge(self: T, source: str, destination: str, weight: int) -> T:
         """
-        Updates edge weight
-        :param source:
-        :param destination:
-        :param weight:
-        :return:
+        Checks if the edge exists in the graph
+
+        :param source: Source
+        :type source: str
+        :param destination: Destination
+        :type destination: str
+        :param weight: Weight
+        :type weight: int
+
+        :return: Self
         """
         self.get_vertex(source).add_neighbour(destination, weight)
         return self
@@ -182,7 +262,8 @@ class Graph(BaseGraph, ABC):
     def get_edges(self) -> List[Dict]:
         """
         Gets list of Edges
-        :return:
+
+        :return: List of dictionary having Edge source, destination and weight as keys
         """
         edges = []
         for vertex in self.get_vertices():
@@ -193,9 +274,24 @@ class Graph(BaseGraph, ABC):
         return edges
 
     def copy(self: T) -> T:
+        """
+        Return a deep copy of the graph
+
+        :return: Copied Graph
+        """
         return copy.deepcopy(self)
 
     def graph_union(self: T, attach_graph: T, attach_edges: List['Edge']) -> T:
+        """
+        Attaches the caller graph with a graph and attachment edges
+
+        :param attach_graph: Graph to attach
+        :type attach_graph: T
+        :param attach_edges: Edges to connect with attach_graph
+        :type attach_edges: List[Edge]
+
+        :return: Self
+        """
         graph = Graph(copy.deepcopy({**self.graph, **attach_graph.graph}))
         for edge in attach_edges:
             graph.add_edge(edge.source, edge.destination, edge.weight)

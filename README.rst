@@ -2,7 +2,7 @@
 Reoptimization Algorithms
 *************************
 
-This package implements some well known Reoptimization algorithms
+Package implementing some well known Reoptimization algorithms
 
 .. image:: images/header.png
 
