@@ -52,7 +52,7 @@ Pull Request Guidelines
 Before you submit a pull request (PR) from your forked repo, check that it meets
 these guidelines:
 
--   Include docs using docstrings and generate docs using ``make -C docsrc github-publish``
+-   Include docs in `README.rst` and `docsrc/source/content.rst` and docstrings. Generate docs using ``make -C docsrc github-publish``
 
     The repo uses `Sphinx autosummary extenstion<https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html>`__ for generating docs
 
