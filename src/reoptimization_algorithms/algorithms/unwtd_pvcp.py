@@ -44,7 +44,7 @@ class UnweightedPVCP:
 
         .. code-block:: python
 
-            from reoptimization_algortihms import UnweightedPVCP
+            from reoptimization_algorithms import UnweightedPVCP, PVCUtils, UndirectedGraph, Edge
 
             old_graph = (UndirectedGraph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
                          .add_vertex("6").add_edge("4", "8").add_vertex("99")

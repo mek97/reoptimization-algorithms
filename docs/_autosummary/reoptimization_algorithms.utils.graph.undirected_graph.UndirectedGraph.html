@@ -171,7 +171,7 @@
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reoptimization_algortihms</span> <span class="kn">import</span> <span class="n">UndirectedGraph</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reoptimization_algorithms</span> <span class="kn">import</span> <span class="n">UndirectedGraph</span>
 
 <span class="n">graph</span> <span class="o">=</span> <span class="n">UndirectedGraph</span><span class="p">()</span>
 <span class="n">graph</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span> <span class="c1"># Adding vertex</span>
@@ -374,7 +374,7 @@ dictionary of source, _destination and _weight</p>
 <dl class="py method">
 <dt id="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.graph_union">
 <code class="sig-name descname">graph_union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attach_graph</span><span class="p">:</span> <span class="n">T</span></em>, <em class="sig-param"><span class="n">attach_edges</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Edge<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.graph_union" title="Permalink to this definition">¶</a></dt>
-<dd><p>Attaches the caller graph with attach graph and attachment edges</p>
+<dd><p>Attaches the caller graph with attach graph and attachment edges, make sure the vertices are disjoint</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -382,8 +382,11 @@ dictionary of source, _destination and _weight</p>
 <li><p><strong>attach_edges</strong> (<em>List</em><em>[</em><a class="reference internal" href="reoptimization_algorithms.utils.graph.edge.Edge.html#reoptimization_algorithms.utils.graph.edge.Edge" title="reoptimization_algorithms.utils.graph.edge.Edge"><em>Edge</em></a><em>]</em>) – Edges to connect with attach_graph</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Self</p>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="reoptimization_algorithms.errors.Error.InputError.html#reoptimization_algorithms.errors.Error.InputError" title="reoptimization_algorithms.errors.Error.InputError"><strong>InputError</strong></a> – If Vertices of calling graph and attach graph are not disjoint</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Self</p>
 </dd>
 </dl>
 </dd></dl>
