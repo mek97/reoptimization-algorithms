@@ -6,6 +6,7 @@ import copy
 from abc import ABC
 from typing import Dict, List, TypeVar
 
+from reoptimization_algorithms.errors.Error import InputError
 from reoptimization_algorithms.utils.graph.base_graph import BaseGraph
 from reoptimization_algorithms.utils.graph.edge import Edge
 from reoptimization_algorithms.utils.graph.vertex import Vertex
@@ -283,15 +284,24 @@ class Graph(BaseGraph, ABC):
 
     def graph_union(self: T, attach_graph: T, attach_edges: List['Edge']) -> T:
         """
-        Attaches the caller graph with attach graph and attachment edges
+        Attaches the caller graph with attach graph and attachment edges, make sure the vertices are disjoint
 
         :param attach_graph: Graph to attach
         :type attach_graph: T
         :param attach_edges: Edges to connect with attach_graph
         :type attach_edges: List[Edge]
 
+        :raise InputError: If Vertices of calling graph and attach graph are not disjoint
+
         :return: Self
         """
+        if not set(self.get_vertices()).isdisjoint(set(attach_graph.get_vertices())):
+            raise InputError({
+                "calling_graph_vertices": self.get_vertices(),
+                "attach_graph_edges": attach_graph.get_vertices()
+            },
+                "Vertices of calling graph and attach graph must be disjoint")
+
         graph = Graph(copy.deepcopy({**self.graph, **attach_graph.graph}))
         for edge in attach_edges:
             graph.add_edge(edge.source, edge.destination, edge.weight)
