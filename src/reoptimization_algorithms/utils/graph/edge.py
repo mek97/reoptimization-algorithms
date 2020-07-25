@@ -10,7 +10,7 @@ class Edge(BaseEdge):
     """
     Edge class represented as source, destination and weight attributes
 
-    ``DEFAULT_EDGE_WEIGHT`` is set to 1
+    Default weight as :py:attr:`Edge.DEFAULT_EDGE_WEIGHT`
 
     :param source: Source vertex key
     :type source: str
@@ -20,13 +20,11 @@ class Edge(BaseEdge):
     :type weight: int
     """
 
-    DEFAULT_EDGE_WEIGHT = 1
-
     def __init__(self, source: str, destination: str, weight=None):
         """
         Edge class represented as source, destination and weight attributes
 
-        If weight is None then assign DEFAULT_EDGE_WEIGHT
+        Default weight as :py:attr:`Edge.DEFAULT_EDGE_WEIGHT`
 
         :param source: Source vertex key
         :type source: str
@@ -42,20 +40,32 @@ class Edge(BaseEdge):
         self._weight = weight
 
     @property
+    def DEFAULT_EDGE_WEIGHT(self) -> int:
+        """
+        Default Edge Weight
+
+        :return: 1
+        """
+        return 1
+
+    @property
     def source(self) -> str:
         """
         Source vertex key
+
+        :return: Vertex key
         """
         return self._source
 
     @source.setter
     def source(self, source: str) -> None:
         """
-        Source setter
+        Source vertex key setter
+
         :param source: Source vertex key
         :type source: str
 
-        :return:
+        :return: None
         """
         self._source = source
 
@@ -63,17 +73,19 @@ class Edge(BaseEdge):
     def destination(self) -> str:
         """
         Destination vertex key
+
+        :return: Destination vertex key
         """
         return self._destination
 
     @destination.setter
     def destination(self, destination: str) -> None:
         """
-        Destination setter
+        Destination vertex key setter
         :param destination: Destination vertex key
         :type destination: str
 
-        :return:
+        :return: None
         """
         self._destination = destination
 
@@ -81,6 +93,8 @@ class Edge(BaseEdge):
     def weight(self) -> int:
         """
         Edge weight
+
+        :return: Edge weight
         """
         return self._weight
 
@@ -91,6 +105,6 @@ class Edge(BaseEdge):
         :param weight: Edge weight
         :type weight: int
 
-        :return:
+        :return: None
         """
         self._weight = weight
