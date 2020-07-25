@@ -32,7 +32,7 @@ class PVCUtils:
 
         .. code-block:: python
 
-           from reoptimization_algortihms import PVCUtils
+           from reoptimization_algorithms import PVCUtils, UndirectedGraph
 
            graph = (UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
                     .add_vertex("6").add_edge("4", "8").add_vertex("99"))
@@ -63,7 +63,7 @@ class PVCUtils:
 
         .. code-block:: python
 
-           from reoptimization_algortihms import PVCUtils
+           from reoptimization_algorithms import PVCUtils, UndirectedGraph
 
            graph = (UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
                     .add_vertex("6").add_edge("4", "8").add_vertex("99"))
@@ -93,7 +93,7 @@ class PVCUtils:
 
         .. code-block:: python
 
-            from reoptimization_algortihms import PVCUtils
+            from reoptimization_algorithms import PVCUtils, UndirectedGraph
 
             graph = (UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
                     .add_vertex("6").add_edge("4", "8").add_vertex("99"))
