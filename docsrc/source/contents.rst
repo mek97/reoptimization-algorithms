@@ -35,7 +35,7 @@ Installation
 
   To Install the stable latest package from pypi host
 
-    `WIP`
+    ``pip install reoptimization-algorithms``
 
 * Option 2
 
