@@ -22,7 +22,7 @@ class UndirectedGraph(Graph):
 
     .. code-block:: python
 
-       from reoptimization_algortihms import UndirectedGraph
+       from reoptimization_algorithms import UndirectedGraph
 
        graph = UndirectedGraph()
        graph = graph.add_vertex("4", 14) # Adding vertex

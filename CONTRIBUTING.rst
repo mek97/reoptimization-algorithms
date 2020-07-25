@@ -52,7 +52,9 @@ Pull Request Guidelines
 Before you submit a pull request (PR) from your forked repo, check that it meets
 these guidelines:
 
--   Include docs in ``README.rst`` and ``docsrc/source/content.rst`` and docstrings. Generate docs using ``make -C docsrc github-publish``
+-   Include docs in ``README.rst`` and ``docsrc/source/content.rst`` and docstrings.
+
+    Generate docs using ``make -C docsrc github-publish``
 
     The repo uses `Sphinx autosummary extenstion <https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html>`__ for generating docs
 
@@ -60,7 +62,7 @@ these guidelines:
     request.
 
     The repo uses `Github Actions <https://help.github.com/en/actions>`__ to
-    run the tests. You can set up on your fork if needed. It will help you make sure you do not
+    run the tests and `codecov <https://codecov.io/gh/mek97/reoptimization-algorithms>`__ to track coverage. You can set up on your fork if needed. It will help you make sure you do not
     break the build with your PR.
 
 -   Strictly adhering PEP8 coding style guide.
