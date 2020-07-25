@@ -1,0 +1,20 @@
+include pyproject.toml
+
+# Include the README
+include *.rst
+
+# Include the license file
+include LICENSE.txt
+
+# Including doc files
+include *.md
+
+# Include the data files
+recursive-include data *
+recursive-include src *.py
+
+# Exclude the data files
+recursive-exclude tests *
+recursive-exclude images *.png
+recursive-exclude docs *
+recursive-exclude docsrc *
