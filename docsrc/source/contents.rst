@@ -72,7 +72,7 @@ Graph Data structure
 Graph utilities
 
     - :py:obj:`Graph <reoptimization_algorithms.utils.graph.graph.Graph>` - Graph utilities class
-    - :py:obj:`Undirected Graph <reoptimization_algorithms.utils.undirected_graph.undirected_graph.UndirectedGraph>` - Undirected utilities class
+    - :py:obj:`Undirected Graph <reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph>` - Undirected utilities class
     - :py:obj:`Vertex <reoptimization_algorithms.utils.graph.vertex.Vertex>` - Vertex utilities class
     - :py:obj:`Edge <reoptimization_algorithms.utils.graph.edge.Edge>` - Edge utilities class
 

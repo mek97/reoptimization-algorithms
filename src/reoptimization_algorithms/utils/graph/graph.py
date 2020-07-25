@@ -29,7 +29,7 @@ class Graph(BaseGraph, ABC):
 
     .. code-block:: python
 
-       from reoptimization_algortihms import Graph
+       from reoptimization_algorithms import Graph
 
        graph = Graph()
        graph = graph.add_vertex("4", 14) # Adding vertex
