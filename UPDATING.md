@@ -17,3 +17,5 @@ assists users migrating to a new version.
 - Added unit tests and github workflows
 - Added code docs and templates
 - Added graph data structure
+- Added PTAS reoptimzation of unweighted k-PVCP under constant size graph insertion
+- Added docs github publish

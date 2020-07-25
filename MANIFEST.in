@@ -12,11 +12,9 @@ include *.md
 # Include the data files
 recursive-include data *
 recursive-include src *.py
-recursive-include tests *.py
-recursive-include docs *.keep
-recursive-include images *.png
-recursive-include docs *.css
-recursive-include docs *.py
-recursive-include docs *.rst
-recursive-include docs *.bat
-recursive-include docs Makefile
+
+# Exclude the data files
+recursive-exclude tests *
+recursive-exclude images *.png
+recursive-exclude docs *
+recursive-exclude docsrc *

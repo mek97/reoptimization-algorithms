@@ -42,8 +42,8 @@ class Graph(BaseGraph, ABC):
 
        # Add, Update and Deletes can be chained as follows
        graph = (Graph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
-       .add_vertex("6").add_edge("4", "8").delete_edge("4", "5").add_vertex("99")
-       .delete_vertex("6"))
+                .add_vertex("6").add_edge("4", "8").delete_edge("4", "5").add_vertex("99")
+                .delete_vertex("6"))
     """
 
     def __init__(self, graph: Dict[str, 'Vertex'] = None):
@@ -80,7 +80,7 @@ class Graph(BaseGraph, ABC):
         """
         Checks if the vertex exists in the graph
 
-        :param vertex: key
+        :param vertex: Vertex key
         :type vertex: str
         :return: Boolean
         """
@@ -90,7 +90,7 @@ class Graph(BaseGraph, ABC):
         """
         Gets the vertex
 
-        :param vertex: key
+        :param vertex: Vertex key
         :type vertex: str
 
         :return: Vertex
@@ -102,9 +102,9 @@ class Graph(BaseGraph, ABC):
 
     def add_vertex(self: T, vertex: str, weight: int = None) -> T:
         """
-        Adds a vertex to the graph, default weight as Vertex.DEFAULT_VERTEX_WEIGHT
+        Adds a vertex to the graph, default weight as :py:obj:`Vertex.DEFAULT_VERTEX_WEIGHT`
 
-        :param vertex: Key
+        :param vertex: Vertex key
         :type vertex: str
         :param weight: Vertex weight
         :type weight: int
@@ -121,7 +121,7 @@ class Graph(BaseGraph, ABC):
         """
         Deletes a vertex
 
-        :param vertex: Key
+        :param vertex: Vertex key
         :type vertex: str
 
         :return: Self
@@ -137,7 +137,7 @@ class Graph(BaseGraph, ABC):
         """
         Updates vertex weight
 
-        :param vertex: Key
+        :param vertex: Vertex key
         :type vertex: str
         :param weight: Vertex weight
         :type weight: int
@@ -170,7 +170,7 @@ class Graph(BaseGraph, ABC):
 
     def delete_isolated_vertices(self: T) -> T:
         """
-        Deletes isolated vertices
+        Deletes isolated vertices in the graph
 
         :return: Self
         """
@@ -182,9 +182,9 @@ class Graph(BaseGraph, ABC):
         """
         Checks if the edge exists in the graph
 
-        :param source: Source
+        :param source: Edge source
         :type source: str
-        :param destination: Destination
+        :param destination: Edge destination
         :type destination: str
 
         :return: Boolean
@@ -193,11 +193,11 @@ class Graph(BaseGraph, ABC):
 
     def get_edge(self, source: str, destination: str) -> 'Edge':
         """
-        Checks if the edge exists in the graph
+        Gets edge from the graph
 
-        :param source: Source
+        :param source: Edge source
         :type source: str
-        :param destination: Destination
+        :param destination: Edge destination
         :type destination: str
 
         :return: Edge
@@ -206,11 +206,11 @@ class Graph(BaseGraph, ABC):
 
     def add_edge(self: T, source: str, destination: str, weight: int = None) -> T:
         """
-        Checks if the edge exists in the graph
+        Adds edge in the graph, default weight as :py:obj:`Edge.DEFAULT_EDGE_WEIGHT`
 
-        :param source: Source
+        :param source: Edge source
         :type source: str
-        :param destination: Destination
+        :param destination: Edge destination
         :type destination: str
         :param weight: Weight
         :type weight: int
@@ -231,11 +231,11 @@ class Graph(BaseGraph, ABC):
 
     def delete_edge(self: T, source: str, destination: str) -> T:
         """
-        Checks if the edge exists in the graph
+        Deletes the edge in the graph
 
-        :param source: Source
+        :param source: Edge source
         :type source: str
-        :param destination: Destination
+        :param destination: Edge destination
         :type destination: str
 
         :return: Self
@@ -247,9 +247,9 @@ class Graph(BaseGraph, ABC):
         """
         Checks if the edge exists in the graph
 
-        :param source: Source
+        :param source: Edge source
         :type source: str
-        :param destination: Destination
+        :param destination: Edge destination
         :type destination: str
         :param weight: Weight
         :type weight: int
@@ -283,7 +283,7 @@ class Graph(BaseGraph, ABC):
 
     def graph_union(self: T, attach_graph: T, attach_edges: List['Edge']) -> T:
         """
-        Attaches the caller graph with a graph and attachment edges
+        Attaches the caller graph with attach graph and attachment edges
 
         :param attach_graph: Graph to attach
         :type attach_graph: T

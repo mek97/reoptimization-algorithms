@@ -17,7 +17,7 @@ class UnweightedPVCP:
     """
 
     @staticmethod
-    def reoptimize_ptas(old_graph: 'UndirectedGraph', attach_graph: 'UndirectedGraph', attach_edges: List['Edge'],
+    def reoptimize_ptas(old_graph: 'UndirectedGraph', attach_graph: 'UndirectedGraph', attach_edges: List[Edge],
                         old_solution: Set[str], k: int, epsilon: float = 0.25) -> Set[str]:
         """
         :math:`(1+\\epsilon)` PTAS approximation for reoptimization of  unweighted k path vertex cover under constant size graph insertion
@@ -29,7 +29,7 @@ class UnweightedPVCP:
         :param attach_graph: Constant size graph which is to be inserted
         :type attach_graph: UndirectedGraph
         :param attach_edges: Edges connecting the old graph and attach graph
-        :type attach_edges: List['Edge']
+        :type attach_edges: List[Edge]
         :param old_solution: Vertices denoting k-PVCP Solution to old graph
         :type old_solution: Set[str]
         :param k: length of paths to cover
@@ -47,8 +47,8 @@ class UnweightedPVCP:
             from reoptimization_algortihms import UnweightedPVCP
 
             old_graph = (UndirectedGraph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
-                     .add_vertex("6").add_edge("4", "8").add_vertex("99")
-                     .delete_vertex("6"))
+                         .add_vertex("6").add_edge("4", "8").add_vertex("99")
+                         .delete_vertex("6"))
             attached_graph = UndirectedGraph().add_edge("90", "95")
             attach_edges = [Edge("4", "90")]
             solution = UnweightedPVCP.reoptimize_ptas(old_graph, attached_graph, attach_edges, {"8"}, 3)

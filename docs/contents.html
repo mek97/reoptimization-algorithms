@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &mdash; Reoptimization Algorithms 0.0.1.rc.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Reoptimization Algorithms’s documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Reoptimization Algorithms
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#notable-references">Notable references</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#setup">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#graph-data-structure">Graph Data structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#algorithms">Algorithms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reoptimization-of-k-path-vertex-cover-problems-k-pcvp">Reoptimization of k Path vertex cover problems (k-PCVP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ptas-for-unweighted-k-pvcp-under-constant-size-graph-insertion">PTAS for unweighted k-PVCP under constant size graph insertion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#k-pvcp-utilities">k-PVCP utilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#package-documentation">Package documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#contribution">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Reoptimization Algorithms</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/contents.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Currently, considerable efforts must be put to find optimal solution for NP-Hard problems.
+Reoptimisation deals with, If given an optimal solution to a problem instance I<sub>O</sub>,
+can we find a good approximated solution to instance I<sub>N</sub>, where I<sub>N</sub> is I<sub>O</sub> with some ‘local’ modifications?
+The goal is to expose some well known reoptimization algorithms.</p>
+<div class="section" id="notable-references">
+<h2>Notable references<a class="headerlink" href="#notable-references" title="Permalink to this headline">¶</a></h2>
+<p>Reoptimization algortithms</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.researchgate.net/publication/48445129_Complexity_and_Approximation_in_Reoptimization">Complexity and Approximation in Reoptimization</a></p></li>
+</ul>
+<p>Approximation algorithms</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.ics.uci.edu/~vazirani/book.pdf">Approximation algorithms</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Approximation_algorithm">Wikipedia</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Python versions: &gt;=3.6, &lt;=3.8</p></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Option 1</p>
+<p>To Install the stable latest package from pypi host</p>
+<blockquote>
+<div><p><cite>WIP</cite></p>
+</div></blockquote>
+</li>
+<li><p>Option 2</p>
+<p>To install directly from <a class="reference external" href="https://github.com/mek97/reoptimization-algorithms">source</a> execute the following in source root directory</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>Implementation basically consists of</p>
+<ol class="arabic simple">
+<li><p>Having a graph data structure utility</p></li>
+<li><p>Implementing the respective graph algorithm methods</p></li>
+</ol>
+<div class="section" id="graph-data-structure">
+<h2>Graph Data structure<a class="headerlink" href="#graph-data-structure" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">A graph G is a pair of sets (V, E), where V is the set of vertices and E is the set of edges formed by pairs of vertices in V</div>
+<div class="line">An unordered graph is a graph where E is formed by unordered pairs of vertices</div>
+<div class="line">We consider path as ordered set of vertices where adjacent vertices forms an edge and by path length we refer number of vertices in it</div>
+<div class="line">We say a set of vertices covers a path if at least once vertex belongs to the vertex set of path</div>
+</div>
+<ul class="simple">
+<li><p>The graph data structures implementation is based on an adjacency list representation.</p></li>
+<li><p>The graph adjacency structure is implemented as a Python dictionary of dictionaries, the outer dictionary is keyed by vertices and mapped to neighboring vertex forming an edge.</p></li>
+<li><p>Vertices and Edges are provided with a weight property</p></li>
+<li><p>Supports CRUD operations on vertices and edges of graph</p></li>
+<li><p>Reference <a class="reference external" href="https://en.wikipedia.org/wiki/Adjacency_list">Adjacency list</a>, Further read <a class="reference external" href="http://free-journal.umm.ac.id/files/file/igtpref.ps">Introduction to Graph Theory By Douglas Brent West</a></p></li>
+</ul>
+<p>Graph utilities</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="_autosummary/reoptimization_algorithms.utils.graph.graph.Graph.html#reoptimization_algorithms.utils.graph.graph.Graph" title="reoptimization_algorithms.utils.graph.graph.Graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph</span></code></a> - Graph utilities class</p></li>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Undirected</span> <span class="pre">Graph</span></code> - Undirected utilities class</p></li>
+<li><p><a class="reference internal" href="_autosummary/reoptimization_algorithms.utils.graph.vertex.Vertex.html#reoptimization_algorithms.utils.graph.vertex.Vertex" title="reoptimization_algorithms.utils.graph.vertex.Vertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vertex</span></code></a> - Vertex utilities class</p></li>
+<li><p><a class="reference internal" href="_autosummary/reoptimization_algorithms.utils.graph.edge.Edge.html#reoptimization_algorithms.utils.graph.edge.Edge" title="reoptimization_algorithms.utils.graph.edge.Edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Edge</span></code></a> - Edge utilities class</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="algorithms">
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reoptimization-of-k-path-vertex-cover-problems-k-pcvp">
+<h3>Reoptimization of k Path vertex cover problems (k-PCVP)<a class="headerlink" href="#reoptimization-of-k-path-vertex-cover-problems-k-pcvp" title="Permalink to this headline">¶</a></h3>
+<p>The objective in k-path vertex cover problem is to compute a minimum subset S of the vertices in a graph G such that S covers all the k paths in the graph</p>
+<div class="section" id="ptas-for-unweighted-k-pvcp-under-constant-size-graph-insertion">
+<h4>PTAS for unweighted k-PVCP under constant size graph insertion<a class="headerlink" href="#ptas-for-unweighted-k-pvcp-under-constant-size-graph-insertion" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">PTAS algorithm when a constant size graph is inserted to old graph. By constant graph we mean a graph having constant number of vertices.</div>
+<div class="line">For algorithm details refer <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-030-26176-4_30#:~:text=The%20objective%20in%20k%2Dpath,cover%20problem%20admits%20a%20PTAS.">Reoptimization of Path Vertex Cover Problem</a></div>
+</div>
+<p><a class="reference internal" href="_autosummary/reoptimization_algorithms.algorithms.unwtd_pvcp.UnweightedPVCP.html#reoptimization_algorithms.algorithms.unwtd_pvcp.UnweightedPVCP.reoptimize_ptas" title="reoptimization_algorithms.algorithms.unwtd_pvcp.UnweightedPVCP.reoptimize_ptas"><code class="xref py py-meth docutils literal notranslate"><span class="pre">UnweightedPVCP.reoptimize_ptas</span></code></a> - Method to perform the algorithm</p>
+</div>
+<div class="section" id="k-pvcp-utilities">
+<h4>k-PVCP utilities<a class="headerlink" href="#k-pvcp-utilities" title="Permalink to this headline">¶</a></h4>
+<p>Some utilities for k path vertex cover</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="_autosummary/reoptimization_algorithms.utils.graph.pvc.PVCUtils.html#reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_k_pvc" title="reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_k_pvc"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PVCUtils.is_k_pvc</span></code></a> - Method to check if a vertex set is a valid k path cover</p></li>
+<li><p><a class="reference internal" href="_autosummary/reoptimization_algorithms.utils.graph.pvc.PVCUtils.html#reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_vertex_set_path" title="reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_vertex_set_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PVCUtils.is_vertex_set_path</span></code></a> - Method to check if a vertex set forms a path in the graph</p></li>
+<li><p><a class="reference internal" href="_autosummary/reoptimization_algorithms.utils.graph.pvc.PVCUtils.html#reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_path" title="reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PVCUtils.is_path</span></code></a> - Method to check if a path exists in the graph</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="package-documentation">
+<h1>Package documentation<a class="headerlink" href="#package-documentation" title="Permalink to this headline">¶</a></h1>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/reoptimization_algorithms.html#module-reoptimization_algorithms" title="reoptimization_algorithms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reoptimization_algorithms</span></code></a></p></td>
+<td><p>Package implementing some well known Reoptimization algorithms</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="contribution">
+<h1>Contribution<a class="headerlink" href="#contribution" title="Permalink to this headline">¶</a></h1>
+<p>Want to add or improvise the repository? Check out the <a class="reference external" href="https://github.com/mek97/repotimization-algorithms/blob/release-v0/CONTRIBUTING.rst">Contributing</a> documentation :)</p>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/mek97/reoptimization-algorithms">Github</a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Reoptimization Algorithms’s documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Mehul Kumar
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

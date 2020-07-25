@@ -8,14 +8,19 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
+with open(path.join(here, 'LICENSE.txt'), encoding='utf-8') as f:
+    project_license = f.read()
+
 setup(
     name='reoptimization-algorithms',  # Required
-    version='0.0.1',  # Required
+    version='0.0.1.rc.1',  # Required
     description='Contains famous Reoptimization algorithms',  # Optional
 
     long_description=long_description,  # Optional
 
     long_description_content_type='text/x-rst',  # Optional (see note above)
+
+    license="MIT License",
 
     url='https://github.com/mek97/reoptimization-algorithms',  # Optional
 
@@ -33,7 +38,7 @@ setup(
 
     package_dir={'': 'src'},  # Optional
 
-    packages=find_packages(where='src'),  # Required
+    packages=find_packages(where='src', exclude=['tests*', 'docs*', 'docsrc*', 'images*']),  # Required
 
     python_requires='>=3.6',
 

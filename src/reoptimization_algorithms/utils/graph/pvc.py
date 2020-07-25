@@ -35,7 +35,7 @@ class PVCUtils:
            from reoptimization_algortihms import PVCUtils
 
            graph = (UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
-                 .add_vertex("6").add_edge("4", "8").add_vertex("99"))
+                    .add_vertex("6").add_edge("4", "8").add_vertex("99"))
            print(PVCUtils.is_k_pvc(graph, {"4"}, 3)) # True
         """
         is_k_pvc = True
@@ -66,7 +66,7 @@ class PVCUtils:
            from reoptimization_algortihms import PVCUtils
 
            graph = (UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
-                 .add_vertex("6").add_edge("4", "8").add_vertex("99"))
+                    .add_vertex("6").add_edge("4", "8").add_vertex("99"))
            print(PVCUtils.is_vertex_set_path(graph, {"4", "5", "8"})) # True
         """
         is_k_path = False
@@ -93,10 +93,10 @@ class PVCUtils:
 
         .. code-block:: python
 
-           from reoptimization_algortihms import PVCUtils
+            from reoptimization_algortihms import PVCUtils
 
-           graph = (UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
-                 .add_vertex("6").add_edge("4", "8").add_vertex("99"))
+            graph = (UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
+                    .add_vertex("6").add_edge("4", "8").add_vertex("99"))
             print(PVCUtils.is_path(graph, ["4"])) # True
         """
         is_k_path = True

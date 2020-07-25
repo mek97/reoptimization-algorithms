@@ -57,7 +57,7 @@ class UndirectedGraph(Graph):
 
     def is_edge_exists(self, vertex_1: str, vertex_2: str) -> bool:
         """
-        Checks if edge exists
+        Checks if edge exists in the graph
 
         :param vertex_1: vertex 1 of the edge
         :type vertex_1: str
@@ -70,7 +70,7 @@ class UndirectedGraph(Graph):
 
     def update_edge(self, vertex_1: str, vertex_2: str, weight: int) -> 'UndirectedGraph':
         """
-        Updates edge weight
+        Updates edge weight in the graph
 
         :param vertex_1: vertex 1 of the edge
         :type vertex_1: str
@@ -91,7 +91,7 @@ class UndirectedGraph(Graph):
 
     def delete_edge(self, vertex_1: str, vertex_2: str) -> 'UndirectedGraph':
         """
-        Deletes an edge
+        Deletes an edge in the graph
 
         :param vertex_1: vertex 1 of the edge
         :type vertex_1: str
@@ -110,7 +110,7 @@ class UndirectedGraph(Graph):
 
     def add_edge(self, vertex_1: str, vertex_2: str, weight: int = None) -> 'UndirectedGraph':
         """
-        Adds an edge
+        Adds an edge in the graph
 
         :param vertex_1: vertex 1 of the edge
         :type vertex_1: str
@@ -131,7 +131,7 @@ class UndirectedGraph(Graph):
 
     def get_edges(self) -> List[Dict]:
         """
-        Gets edges in the graph
+        Gets edges from the graph
 
         :return: List of dictionary having Edge source, destination and weight as keys
         """
