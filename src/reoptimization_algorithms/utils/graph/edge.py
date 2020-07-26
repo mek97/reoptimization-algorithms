@@ -17,10 +17,10 @@ class Edge(BaseEdge):
     :param destination: Destination vertex key
     :type destination: str
     :param weight: Weight
-    :type weight: int
+    :type weight: float, optional (default = None)
     """
 
-    def __init__(self, source: str, destination: str, weight=None):
+    def __init__(self, source: str, destination: str, weight: float = None):
         """
         Edge class represented as source, destination and weight attributes
 
@@ -31,7 +31,7 @@ class Edge(BaseEdge):
         :param destination: Destination vertex key
         :type destination: str
         :param weight: Weight
-        :type weight: int
+        :type weight: float, optional (default = None)
         """
         self._source = source
         self._destination = destination
@@ -40,7 +40,7 @@ class Edge(BaseEdge):
         self._weight = weight
 
     @property
-    def DEFAULT_EDGE_WEIGHT(self) -> int:
+    def DEFAULT_EDGE_WEIGHT(self) -> float:
         """
         Default Edge Weight
 
@@ -90,7 +90,7 @@ class Edge(BaseEdge):
         self._destination = destination
 
     @property
-    def weight(self) -> int:
+    def weight(self) -> float:
         """
         Edge weight
 
@@ -99,11 +99,11 @@ class Edge(BaseEdge):
         return self._weight
 
     @weight.setter
-    def weight(self, weight: int) -> None:
+    def weight(self, weight: float) -> None:
         """
         Edge weight setter
         :param weight: Edge weight
-        :type weight: int
+        :type weight: float
 
         :return: None
         """

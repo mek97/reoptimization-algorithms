@@ -47,7 +47,7 @@ class UndirectedGraph(Graph):
          as key mapped to neighbouring vertices in a symmetric manner
 
         :param graph: Undirected graph definition, if None then empty graph is instantiated
-        :type graph: Dict[str, Vertex]
+        :type graph: Dict[str, Vertex], optional (default = None)
 
         """
         super().__init__(graph)
@@ -68,7 +68,7 @@ class UndirectedGraph(Graph):
         """
         return super().is_edge_exists(vertex_1, vertex_2) and super().is_edge_exists(vertex_2, vertex_1)
 
-    def update_edge(self, vertex_1: str, vertex_2: str, weight: int) -> 'UndirectedGraph':
+    def update_edge(self, vertex_1: str, vertex_2: str, weight: float) -> 'UndirectedGraph':
         """
         Updates edge weight in the graph
 
@@ -77,7 +77,7 @@ class UndirectedGraph(Graph):
         :param vertex_2: vertex 2 of the edge
         :type vertex_2: str
         :param weight: Weight to change with
-        :type weight: int
+        :type weight: float
 
         :return: Self
         """
@@ -108,7 +108,7 @@ class UndirectedGraph(Graph):
 
         return self
 
-    def add_edge(self, vertex_1: str, vertex_2: str, weight: int = None) -> 'UndirectedGraph':
+    def add_edge(self, vertex_1: str, vertex_2: str, weight: float = None) -> 'UndirectedGraph':
         """
         Adds an edge in the graph
 
@@ -117,7 +117,7 @@ class UndirectedGraph(Graph):
         :param vertex_2: vertex 2 of the edge
         :type vertex_2: str
         :param weight: Weight of the edge
-        :type weight: int
+        :type weight: float, optional (default = None)
 
         :return: Self
         """
@@ -151,7 +151,7 @@ class UndirectedGraph(Graph):
         Returns the graph in the pretty format
 
         :return: Vertices as list of {'_Vertex__key': '4', '_weight': 1, '_neighbours': ..} and edges as list of
-         dictionary of source, _destination and _weight
+         dictionary {_source, _destination and _weight}
         """
         vertices = self.get_vertices()
         formatted_vertices = []

@@ -21,7 +21,7 @@ class Vertex:
     :type neighbours: Dict[str, Edge]
     """
 
-    def __init__(self, key: str, weight: int = None, neighbours: Dict[str, 'Edge'] = None):
+    def __init__(self, key: str, weight: float = None, neighbours: Dict[str, 'Edge'] = None):
         """
         Vertex class having key, weight and adjacency dictionary of neighbours
 
@@ -30,9 +30,9 @@ class Vertex:
         :param key: Key
         :type key: str
         :param weight: Weight of the vertex
-        :type weight: int
+        :type weight: float, optional (default = None)
         :param neighbours: Neighbours of the vertex
-        :type neighbours: Dict[str, Edge]
+        :type neighbours: Dict[str, Edge], optional (default = None)
         """
         self.__key = key
         if weight is None:
@@ -44,7 +44,7 @@ class Vertex:
         self._neighbours = neighbours
 
     @property
-    def DEFAULT_VERTEX_WEIGHT(self) -> int:
+    def DEFAULT_VERTEX_WEIGHT(self) -> float:
         """
         Default Vertex weight
 
@@ -62,7 +62,7 @@ class Vertex:
         return self.__key
 
     @property
-    def weight(self) -> int:
+    def weight(self) -> float:
         """
         Vertex weight
 
@@ -71,12 +71,12 @@ class Vertex:
         return self._weight
 
     @weight.setter
-    def weight(self, weight: int) -> None:
+    def weight(self, weight: float) -> None:
         """
         Vertex weight setter
 
         :param weight: Vertex weight
-        :type weight: int
+        :type weight: float
 
         :return: None
         """
@@ -114,14 +114,14 @@ class Vertex:
         """
         return neighbour in self._neighbours
 
-    def add_neighbour(self, neighbour: str, weight: int = None) -> 'Vertex':
+    def add_neighbour(self, neighbour: str, weight: float = None) -> 'Vertex':
         """
         Adds a neighbour, default edge weight as :py:attr:`Edge.DEFAULT_EDGE_WEIGHT`
 
         :param neighbour: Neighbour vertex key
         :type neighbour: str
         :param weight: Edge weight
-        :type weight: int
+        :type weight: float, optional (default = None)
 
         :return: Self
         """
@@ -143,26 +143,26 @@ class Vertex:
             raise Exception(f'Neighbour {neighbour} does not exists for {self.__key}, create it first')
         return self.neighbours.get(neighbour)
 
-    def update_neighbour(self, neighbour: str, weight: int = None) -> 'Vertex':
+    def update_neighbour(self, neighbour: str, weight: float = None) -> 'Vertex':
         """
         Updates a neighbour, default edge weight as :py:attr:`Edge.DEFAULT_EDGE_WEIGHT`
 
         :param neighbour: Neighbour vertex key
         :type neighbour: str
         :param weight: Edge weight to update
-        :type weight: int
+        :type weight: float, optional (default = None)
 
         :return: Self
         """
         self.neighbours[neighbour] = Edge(self.key, neighbour, weight)
         return self
 
-    def update_weight(self, weight: int) -> 'Vertex':
+    def update_weight(self, weight: float) -> 'Vertex':
         """
         Updates vertex weight
 
         :param weight: Vertex weight
-        :type weight: int
+        :type weight: float, optional (default = None)
 
         :return: Self
         """

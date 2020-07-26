@@ -101,14 +101,14 @@ class Graph(BaseGraph, ABC):
 
         return self._graph.get(vertex)
 
-    def add_vertex(self: T, vertex: str, weight: int = None) -> T:
+    def add_vertex(self: T, vertex: str, weight: float = None) -> T:
         """
-        Adds a vertex to the graph, default weight as :py:obj:`Vertex.DEFAULT_VERTEX_WEIGHT`
+        Adds a vertex to the graph, default weight as :py:attr:`Vertex.DEFAULT_VERTEX_WEIGHT <reoptimization_algorithms.utils.graph.vertex.Vertex.DEFAULT_VERTEX_WEIGHT>`
 
         :param vertex: Vertex key
         :type vertex: str
         :param weight: Vertex weight
-        :type weight: int
+        :type weight: float, optional (default = None)
 
         :return: Self
         """
@@ -134,14 +134,14 @@ class Graph(BaseGraph, ABC):
         self._graph.pop(vertex)
         return self
 
-    def update_vertex(self: T, vertex: str, weight: int) -> T:
+    def update_vertex(self: T, vertex: str, weight: float) -> T:
         """
-        Updates vertex weight
+        Updates the vertex weight
 
         :param vertex: Vertex key
         :type vertex: str
         :param weight: Vertex weight
-        :type weight: int
+        :type weight: float
 
         :return: Self
         """
@@ -205,16 +205,16 @@ class Graph(BaseGraph, ABC):
         """
         return self.get_vertex(source).get_neighbour(destination)
 
-    def add_edge(self: T, source: str, destination: str, weight: int = None) -> T:
+    def add_edge(self: T, source: str, destination: str, weight: float = None) -> T:
         """
-        Adds edge in the graph, default weight as :py:obj:`Edge.DEFAULT_EDGE_WEIGHT`
+        Adds edge in the graph, default weight as :py:attr:`Edge.DEFAULT_EDGE_WEIGHT <reoptimization_algorithms.utils.graph.edge.Edge.DEFAULT_EDGE_WEIGHT>`
 
         :param source: Edge source
         :type source: str
         :param destination: Edge destination
         :type destination: str
         :param weight: Weight
-        :type weight: int
+        :type weight: float
 
         :return: Self
         """
@@ -244,16 +244,16 @@ class Graph(BaseGraph, ABC):
         self.get_vertex(source).delete_neighbour(destination)
         return self
 
-    def update_edge(self: T, source: str, destination: str, weight: int) -> T:
+    def update_edge(self: T, source: str, destination: str, weight: float) -> T:
         """
-        Checks if the edge exists in the graph
+        Updates the edge in the graph
 
         :param source: Edge source
         :type source: str
         :param destination: Edge destination
         :type destination: str
         :param weight: Weight
-        :type weight: int
+        :type weight: float
 
         :return: Self
         """
@@ -282,7 +282,7 @@ class Graph(BaseGraph, ABC):
         """
         return copy.deepcopy(self)
 
-    def graph_union(self: T, attach_graph: T, attach_edges: List['Edge']) -> T:
+    def disjoint_graph_union(self: T, attach_graph: T, attach_edges: List['Edge']) -> T:
         """
         Attaches the caller graph with attach graph and attachment edges, make sure the vertices are disjoint
 
