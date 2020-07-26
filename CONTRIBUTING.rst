@@ -85,4 +85,4 @@ these guidelines:
 Git Branches
 ------------
 
-``master`` branch is the stable branch. All PRs should target ``release-v*`` branch.
+``master`` branch is the stable branch. All PRs should be merged in ``release-v*`` branch.
