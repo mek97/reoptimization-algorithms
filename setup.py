@@ -14,7 +14,7 @@ with open(path.join(here, 'LICENSE.txt'), encoding='utf-8') as f:
 setup(
     name='reoptimization-algorithms',  # Required
     version='0.0.1.rc.1',  # Required
-    description='Contains famous Reoptimization algorithms',  # Optional
+    description='Package implementing some well known Reoptimization algorithms',  # Optional
 
     long_description=long_description,  # Optional
 
@@ -22,7 +22,7 @@ setup(
 
     license="MIT License",
 
-    url='https://github.com/mek97/reoptimization-algorithms',  # Optional
+    url='https://mek97.github.io/reoptimization-algorithms/index.html',  # Optional
 
     author='Mehul Kumar',  # Optional
 

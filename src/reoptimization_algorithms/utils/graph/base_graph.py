@@ -14,7 +14,7 @@ class BaseGraph(metaclass=ABCMeta):
     """
 
     @abstractmethod
-    def add_vertex(self, vertex: str, weight: int = None) -> 'BaseGraph':
+    def add_vertex(self, vertex: str, weight) -> 'BaseGraph':
         raise NotImplementedError
 
     @abstractmethod
@@ -26,7 +26,7 @@ class BaseGraph(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
-    def update_vertex(self, vertex: str, weight: int) -> 'BaseGraph':
+    def update_vertex(self, vertex: str, weight) -> 'BaseGraph':
         raise NotImplementedError
 
     @abstractmethod
@@ -34,7 +34,7 @@ class BaseGraph(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
-    def add_edge(self, source: str, destination: str, weight: int = None) -> 'BaseGraph':
+    def add_edge(self, source: str, destination: str, weight) -> 'BaseGraph':
         raise NotImplementedError
 
     @abstractmethod
@@ -42,5 +42,5 @@ class BaseGraph(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
-    def update_edge(self, source: str, destination: str, weight: int) -> 'BaseGraph':
+    def update_edge(self, source: str, destination: str, weight) -> 'BaseGraph':
         raise NotImplementedError

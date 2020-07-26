@@ -85,10 +85,7 @@
             
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#notable-references">Notable references</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#setup">Setup</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
@@ -98,7 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#graph-data-structure">Graph Data structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#algorithms">Algorithms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#reoptimization-of-k-path-vertex-cover-problems-k-pcvp">Reoptimization of k Path vertex cover problems (k-PCVP)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ptas-for-unweighted-k-pvcp-under-constant-size-graph-insertion">PTAS for unweighted k-PVCP under constant size graph insertion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ptas-for-unweighted-k-pvcp-under-constant-size-graph-insertion-8">PTAS for unweighted k-PVCP under constant size graph insertion </a></li>
 <li class="toctree-l4"><a class="reference internal" href="#k-pvcp-utilities">k-PVCP utilities</a></li>
 </ul>
 </li>
@@ -176,22 +173,26 @@
             
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Currently, considerable efforts must be put to find optimal solution for NP-Hard problems.
-Reoptimisation deals with, If given an optimal solution to a problem instance I<sub>O</sub>,
-can we find a good approximated solution to instance I<sub>N</sub>, where I<sub>N</sub> is I<sub>O</sub> with some ‘local’ modifications?
-The goal is to expose some well known reoptimization algorithms.</p>
-<div class="section" id="notable-references">
-<h2>Notable references<a class="headerlink" href="#notable-references" title="Permalink to this headline">¶</a></h2>
-<p>Reoptimization algortithms</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.researchgate.net/publication/48445129_Complexity_and_Approximation_in_Reoptimization">Complexity and Approximation in Reoptimization</a></p></li>
-</ul>
-<p>Approximation algorithms</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.ics.uci.edu/~vazirani/book.pdf">Approximation algorithms</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Approximation_algorithm">Wikipedia</a></p></li>
-</ul>
-</div>
+<p>Currently, considerable efforts must be put to find optimal solution for <strong>NP-Hard</strong> <a class="footnote-reference brackets" href="#id8" id="id1">4</a> problems.
+Reoptimisation deals with, If given an optimal solution to a problem instance <span class="math notranslate nohighlight">\(I_O\)</span>,
+can we find a good approximated solution to instance <span class="math notranslate nohighlight">\(I_N\)</span>, where <span class="math notranslate nohighlight">\(I_N\)</span> is <span class="math notranslate nohighlight">\(I_O\)</span> with some ‘local’ modifications?
+The goal is to expose some well known reoptimization algorithms. Some references <a class="footnote-reference brackets" href="#id5" id="id2">1</a> <a class="footnote-reference brackets" href="#id6" id="id3">2</a> <a class="footnote-reference brackets" href="#id7" id="id4">3</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Escoffier, B., Bonifaci, V., Ausiello, G.: Complexity and approximation in reoptimization (02 2011),
+&lt;<a class="reference external" href="https://doi.org/10.1142/9781848162778_0004">https://doi.org/10.1142/9781848162778_0004</a>&gt;</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Vazirani, V.V.: Approximation algorithms. Springer (2001)
+&lt;<a class="reference external" href="https://www.ics.uci.edu/~vazirani/book.pdf">https://www.ics.uci.edu/~vazirani/book.pdf</a>&gt;</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Approximation_algorithm">Wikipedia: Approximation algorithms</a></p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id1">4</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/NP-hardness">Wikipedia: NP-Hard</a></p>
+</dd>
+</dl>
 </div>
 <div class="section" id="setup">
 <h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
@@ -229,18 +230,29 @@ The goal is to expose some well known reoptimization algorithms.</p>
 <div class="section" id="graph-data-structure">
 <h2>Graph Data structure<a class="headerlink" href="#graph-data-structure" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
-<div class="line">A graph G is a pair of sets (V, E), where V is the set of vertices and E is the set of edges formed by pairs of vertices in V</div>
-<div class="line">An unordered graph is a graph where E is formed by unordered pairs of vertices</div>
-<div class="line">We consider path as ordered set of vertices where adjacent vertices forms an edge and by path length we refer number of vertices in it</div>
-<div class="line">We say a set of vertices covers a path if at least once vertex belongs to the vertex set of path</div>
+<div class="line">A graph <span class="math notranslate nohighlight">\(G\)</span> is a pair of sets <span class="math notranslate nohighlight">\((V, E)\)</span>, where <span class="math notranslate nohighlight">\(V\)</span> is the set of vertices and <span class="math notranslate nohighlight">\(E\)</span> is the set of edges formed by pairs of vertices in <span class="math notranslate nohighlight">\(V\)</span></div>
+<div class="line">An unordered graph is a graph where <span class="math notranslate nohighlight">\(E\)</span> is formed by unordered pairs of vertices</div>
+<div class="line">We consider path as ordered set of vertices where adjacent vertices forms an edge and by path length we refer as number of vertices in it</div>
+<div class="line">We say a set of vertices covers a path if at least one vertex from the set belongs to the set of the vertices in the path</div>
 </div>
 <ul class="simple">
-<li><p>The graph data structures implementation is based on an adjacency list representation.</p></li>
-<li><p>The graph adjacency structure is implemented as a Python dictionary of dictionaries, the outer dictionary is keyed by vertices and mapped to neighboring vertex forming an edge.</p></li>
+<li><p>The graph data structure implementation here is based on an adjacency list representation.</p></li>
+<li><p>The adjacency structure is implemented as a Python dictionary of dictionaries, the outer dictionary is keyed by vertices and mapped to neighboring vertex forming an edge.</p></li>
 <li><p>Vertices and Edges are provided with a weight property</p></li>
 <li><p>Supports CRUD operations on vertices and edges of graph</p></li>
-<li><p>Reference <a class="reference external" href="https://en.wikipedia.org/wiki/Adjacency_list">Adjacency list</a>, Further read <a class="reference external" href="http://free-journal.umm.ac.id/files/file/igtpref.ps">Introduction to Graph Theory By Douglas Brent West</a></p></li>
+<li><p>References <a class="footnote-reference brackets" href="#id12" id="id9">5</a> <a class="footnote-reference brackets" href="#id13" id="id10">6</a> <a class="footnote-reference brackets" href="#id14" id="id11">7</a></p></li>
 </ul>
+<dl class="footnote brackets">
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id9">5</a></span></dt>
+<dd><p>Introduction to Graph Theory. Prentice Hall (1996)</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id10">6</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Graph_theory">Wikipedia: Graph Theory</a></p>
+</dd>
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id11">7</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Adjacency_list">Wikipedia: Adjacency list</a></p>
+</dd>
+</dl>
 <p>Graph utilities</p>
 <blockquote>
 <div><ul class="simple">
@@ -255,20 +267,29 @@ The goal is to expose some well known reoptimization algorithms.</p>
 <h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="reoptimization-of-k-path-vertex-cover-problems-k-pcvp">
 <h3>Reoptimization of k Path vertex cover problems (k-PCVP)<a class="headerlink" href="#reoptimization-of-k-path-vertex-cover-problems-k-pcvp" title="Permalink to this headline">¶</a></h3>
-<p>The objective in k-path vertex cover problem is to compute a minimum subset S of the vertices in a graph G such that S covers all the k paths in the graph</p>
-<div class="section" id="ptas-for-unweighted-k-pvcp-under-constant-size-graph-insertion">
-<h4>PTAS for unweighted k-PVCP under constant size graph insertion<a class="headerlink" href="#ptas-for-unweighted-k-pvcp-under-constant-size-graph-insertion" title="Permalink to this headline">¶</a></h4>
-<div class="line-block">
-<div class="line">PTAS algorithm when a constant size graph is inserted to old graph. By constant graph we mean a graph having constant number of vertices.</div>
-<div class="line">For algorithm details refer <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-030-26176-4_30#:~:text=The%20objective%20in%20k%2Dpath,cover%20problem%20admits%20a%20PTAS.">Reoptimization of Path Vertex Cover Problem</a></div>
-</div>
+<p>The objective in k Path vertex cover problem is to compute a minimum subset <span class="math notranslate nohighlight">\(S\)</span> of the vertices in a graph <span class="math notranslate nohighlight">\(G\)</span> such that <span class="math notranslate nohighlight">\(S\)</span> covers all the paths of length <span class="math notranslate nohighlight">\(k\)</span> in the graph</p>
+<p><strong>Note</strong> k-PVCP will be referred as minimum k-PVCP throughout the package</p>
+<div class="section" id="ptas-for-unweighted-k-pvcp-under-constant-size-graph-insertion-8">
+<h4>PTAS for unweighted k-PVCP under constant size graph insertion <a class="footnote-reference brackets" href="#id17" id="id15">8</a><a class="headerlink" href="#ptas-for-unweighted-k-pvcp-under-constant-size-graph-insertion-8" title="Permalink to this headline">¶</a></h4>
+<p>PTAS <a class="footnote-reference brackets" href="#id18" id="id16">9</a> algorithm when a constant size graph is inserted to the old graph. By constant graph we mean a graph having constant number of vertices.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id15">8</a></span></dt>
+<dd><p>Kumar M., Kumar A., Pandu Rangan C. (2019) Reoptimization of Path Vertex Cover Problem.
+In: Du DZ., Duan Z., Tian C. (eds) Computing and Combinatorics. COCOON 2019.
+Lecture Notes in Computer Science, vol 11653. Springer, Cham
+&lt;<a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-030-26176-4_30">https://link.springer.com/chapter/10.1007/978-3-030-26176-4_30</a>&gt;</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id16">9</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Polynomial-time_approximation_scheme">Wikipedia: PTAS</a></p>
+</dd>
+</dl>
 <p><a class="reference internal" href="_autosummary/reoptimization_algorithms.algorithms.unwtd_pvcp.UnweightedPVCP.html#reoptimization_algorithms.algorithms.unwtd_pvcp.UnweightedPVCP.reoptimize_ptas" title="reoptimization_algorithms.algorithms.unwtd_pvcp.UnweightedPVCP.reoptimize_ptas"><code class="xref py py-meth docutils literal notranslate"><span class="pre">UnweightedPVCP.reoptimize_ptas</span></code></a> - Method to perform the algorithm</p>
 </div>
 <div class="section" id="k-pvcp-utilities">
 <h4>k-PVCP utilities<a class="headerlink" href="#k-pvcp-utilities" title="Permalink to this headline">¶</a></h4>
 <p>Some utilities for k path vertex cover</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="_autosummary/reoptimization_algorithms.utils.graph.pvc.PVCUtils.html#reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_k_pvc" title="reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_k_pvc"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PVCUtils.is_k_pvc</span></code></a> - Method to check if a vertex set is a valid k path cover</p></li>
+<li><p><a class="reference internal" href="_autosummary/reoptimization_algorithms.utils.graph.pvc.PVCUtils.html#reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_k_pvc" title="reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_k_pvc"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PVCUtils.is_k_pvc</span></code></a> - Method to check if a vertex set is a valid k path vertex cover</p></li>
 <li><p><a class="reference internal" href="_autosummary/reoptimization_algorithms.utils.graph.pvc.PVCUtils.html#reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_vertex_set_path" title="reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_vertex_set_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PVCUtils.is_vertex_set_path</span></code></a> - Method to check if a vertex set forms a path in the graph</p></li>
 <li><p><a class="reference internal" href="_autosummary/reoptimization_algorithms.utils.graph.pvc.PVCUtils.html#reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_path" title="reoptimization_algorithms.utils.graph.pvc.PVCUtils.is_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PVCUtils.is_path</span></code></a> - Method to check if a path exists in the graph</p></li>
 </ul>

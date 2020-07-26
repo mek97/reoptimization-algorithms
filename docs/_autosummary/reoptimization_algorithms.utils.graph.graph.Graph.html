@@ -201,14 +201,14 @@
 </table>
 <dl class="py method">
 <dt id="reoptimization_algorithms.utils.graph.graph.Graph.add_edge">
-<code class="sig-name descname">add_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.graph.Graph.add_edge" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds edge in the graph, default weight as <code class="xref py py-obj docutils literal notranslate"><span class="pre">Edge.DEFAULT_EDGE_WEIGHT</span></code></p>
+<code class="sig-name descname">add_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.graph.Graph.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds edge in the graph, default weight as <a class="reference internal" href="reoptimization_algorithms.utils.graph.edge.Edge.html#reoptimization_algorithms.utils.graph.edge.Edge.DEFAULT_EDGE_WEIGHT" title="reoptimization_algorithms.utils.graph.edge.Edge.DEFAULT_EDGE_WEIGHT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Edge.DEFAULT_EDGE_WEIGHT</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>source</strong> (<em>str</em>) – Edge source</p></li>
 <li><p><strong>destination</strong> (<em>str</em>) – Edge destination</p></li>
-<li><p><strong>weight</strong> (<em>int</em>) – Weight</p></li>
+<li><p><strong>weight</strong> (<em>float</em>) – Weight</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -219,13 +219,13 @@
 
 <dl class="py method">
 <dt id="reoptimization_algorithms.utils.graph.graph.Graph.add_vertex">
-<code class="sig-name descname">add_vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.graph.Graph.add_vertex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds a vertex to the graph, default weight as <code class="xref py py-obj docutils literal notranslate"><span class="pre">Vertex.DEFAULT_VERTEX_WEIGHT</span></code></p>
+<code class="sig-name descname">add_vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.graph.Graph.add_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a vertex to the graph, default weight as <a class="reference internal" href="reoptimization_algorithms.utils.graph.vertex.Vertex.html#reoptimization_algorithms.utils.graph.vertex.Vertex.DEFAULT_VERTEX_WEIGHT" title="reoptimization_algorithms.utils.graph.vertex.Vertex.DEFAULT_VERTEX_WEIGHT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Vertex.DEFAULT_VERTEX_WEIGHT</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertex</strong> (<em>str</em>) – Vertex key</p></li>
-<li><p><strong>weight</strong> (<em>int</em>) – Vertex weight</p></li>
+<li><p><strong>weight</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default = None</em><em>)</em>) – Vertex weight</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -283,6 +283,26 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Self</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.graph.Graph.disjoint_graph_union">
+<code class="sig-name descname">disjoint_graph_union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attach_graph</span><span class="p">:</span> <span class="n">T</span></em>, <em class="sig-param"><span class="n">attach_edges</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Edge<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.graph.Graph.disjoint_graph_union" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attaches the caller graph with attach graph and attachment edges, make sure the vertices are disjoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attach_graph</strong> (<em>T</em>) – Graph to attach</p></li>
+<li><p><strong>attach_edges</strong> (<em>List</em><em>[</em><a class="reference internal" href="reoptimization_algorithms.utils.graph.edge.Edge.html#reoptimization_algorithms.utils.graph.edge.Edge" title="reoptimization_algorithms.utils.graph.edge.Edge"><em>Edge</em></a><em>]</em>) – Edges to connect with attach_graph</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="reoptimization_algorithms.errors.Error.InputError.html#reoptimization_algorithms.errors.Error.InputError" title="reoptimization_algorithms.errors.Error.InputError"><strong>InputError</strong></a> – If Vertices of calling graph and attach graph are not disjoint</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Self</p>
 </dd>
 </dl>
 </dd></dl>
@@ -358,26 +378,6 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="reoptimization_algorithms.utils.graph.graph.Graph.graph_union">
-<code class="sig-name descname">graph_union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attach_graph</span><span class="p">:</span> <span class="n">T</span></em>, <em class="sig-param"><span class="n">attach_edges</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Edge<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.graph.Graph.graph_union" title="Permalink to this definition">¶</a></dt>
-<dd><p>Attaches the caller graph with attach graph and attachment edges, make sure the vertices are disjoint</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>attach_graph</strong> (<em>T</em>) – Graph to attach</p></li>
-<li><p><strong>attach_edges</strong> (<em>List</em><em>[</em><a class="reference internal" href="reoptimization_algorithms.utils.graph.edge.Edge.html#reoptimization_algorithms.utils.graph.edge.Edge" title="reoptimization_algorithms.utils.graph.edge.Edge"><em>Edge</em></a><em>]</em>) – Edges to connect with attach_graph</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="reoptimization_algorithms.errors.Error.InputError.html#reoptimization_algorithms.errors.Error.InputError" title="reoptimization_algorithms.errors.Error.InputError"><strong>InputError</strong></a> – If Vertices of calling graph and attach graph are not disjoint</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Self</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="reoptimization_algorithms.utils.graph.graph.Graph.is_edge_exists">
 <code class="sig-name descname">is_edge_exists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#reoptimization_algorithms.utils.graph.graph.Graph.is_edge_exists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if the edge exists in the graph</p>
@@ -410,14 +410,14 @@
 
 <dl class="py method">
 <dt id="reoptimization_algorithms.utils.graph.graph.Graph.update_edge">
-<code class="sig-name descname">update_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.graph.Graph.update_edge" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the edge exists in the graph</p>
+<code class="sig-name descname">update_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.graph.Graph.update_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the edge in the graph</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>source</strong> (<em>str</em>) – Edge source</p></li>
 <li><p><strong>destination</strong> (<em>str</em>) – Edge destination</p></li>
-<li><p><strong>weight</strong> (<em>int</em>) – Weight</p></li>
+<li><p><strong>weight</strong> (<em>float</em>) – Weight</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -428,13 +428,13 @@
 
 <dl class="py method">
 <dt id="reoptimization_algorithms.utils.graph.graph.Graph.update_vertex">
-<code class="sig-name descname">update_vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.graph.Graph.update_vertex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates vertex weight</p>
+<code class="sig-name descname">update_vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.graph.Graph.update_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the vertex weight</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertex</strong> (<em>str</em>) – Vertex key</p></li>
-<li><p><strong>weight</strong> (<em>int</em>) – Vertex weight</p></li>
+<li><p><strong>weight</strong> (<em>float</em>) – Vertex weight</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

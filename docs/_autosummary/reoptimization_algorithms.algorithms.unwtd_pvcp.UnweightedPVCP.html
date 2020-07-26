@@ -167,7 +167,7 @@
 <em class="property">static </em><code class="sig-name descname">reoptimize_ptas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">old_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.html#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph" title="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph">reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph</a></span></em>, <em class="sig-param"><span class="n">attach_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.html#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph" title="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph">reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph</a></span></em>, <em class="sig-param"><span class="n">attach_edges</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="reoptimization_algorithms.utils.graph.edge.Edge.html#reoptimization_algorithms.utils.graph.edge.Edge" title="reoptimization_algorithms.utils.graph.edge.Edge">reoptimization_algorithms.utils.graph.edge.Edge</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">old_solution</span><span class="p">:</span> <span class="n">Set<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">epsilon</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.25</span></em><span class="sig-paren">)</span> &#x2192; Set<span class="p">[</span>str<span class="p">]</span><a class="headerlink" href="#reoptimization_algorithms.algorithms.unwtd_pvcp.UnweightedPVCP.reoptimize_ptas" title="Permalink to this definition">¶</a></dt>
 <dd><p><span class="math notranslate nohighlight">\((1+\epsilon)\)</span> PTAS approximation for reoptimization of  unweighted k path vertex cover under constant size graph insertion</p>
 <blockquote>
-<div><p>For formalisms and algorithm details refer - <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-030-26176-4_30#:~:text=The%20objective%20in%20k%2Dpath,cover%20problem%20admits%20a%20PTAS.">Reoptimization of Path Vertex Cover Problem</a></p>
+<div><p>For formalisms and algorithm details refer <a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -177,7 +177,7 @@
 <li><p><strong>attach_edges</strong> (<em>List</em><em>[</em><a class="reference internal" href="reoptimization_algorithms.utils.graph.edge.Edge.html#reoptimization_algorithms.utils.graph.edge.Edge" title="reoptimization_algorithms.utils.graph.edge.Edge"><em>Edge</em></a><em>]</em>) – Edges connecting the old graph and attach graph</p></li>
 <li><p><strong>old_solution</strong> (<em>Set</em><em>[</em><em>str</em><em>]</em>) – Vertices denoting k-PVCP Solution to old graph</p></li>
 <li><p><strong>k</strong> (<em>int</em>) – length of paths to cover</p></li>
-<li><p><strong>epsilon</strong> (<em>float</em>) – epsilon in <span class="math notranslate nohighlight">\((1+\epsilon)\)</span> PTAS  approximation</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default = 0.25</em><em>)</em>) – epsilon in <span class="math notranslate nohighlight">\((1+\epsilon)\)</span> PTAS  approximation</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -196,6 +196,15 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span> <span class="c1"># {&quot;4&quot;}</span>
 </pre></div>
 </div>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Kumar M., Kumar A., Pandu Rangan C. (2019) Reoptimization of Path Vertex Cover Problem.
+In: Du DZ., Duan Z., Tian C. (eds) Computing and Combinatorics. COCOON 2019.
+Lecture Notes in Computer Science, vol 11653. Springer, Cham
+&lt;<a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-030-26176-4_30">https://link.springer.com/chapter/10.1007/978-3-030-26176-4_30</a>&gt;</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
