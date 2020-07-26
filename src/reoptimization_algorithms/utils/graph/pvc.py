@@ -16,7 +16,7 @@ class PVCUtils:
     @staticmethod
     def is_k_pvc(graph: 'UndirectedGraph', vertices: Set['str'], k: int) -> bool:
         """
-        Checks if the given candidate vertices are k path cover for the graph
+        Checks if the given candidate vertices are k path vertex cover for the graph
 
         :param graph: Undirected graph
         :type graph: UndirectedGraph
@@ -32,7 +32,7 @@ class PVCUtils:
 
         .. code-block:: python
 
-           from reoptimization_algortihms import PVCUtils
+           from reoptimization_algorithms import PVCUtils, UndirectedGraph
 
            graph = (UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
                     .add_vertex("6").add_edge("4", "8").add_vertex("99"))
@@ -49,7 +49,7 @@ class PVCUtils:
     @staticmethod
     def is_vertex_set_path(graph: 'UndirectedGraph', vertices: Iterable['str']) -> bool:
         """
-        Checks if the vertices form a k path in graph
+        Checks if the vertices form a path of length :math:`k` in graph
 
         :param graph: Undirected graph
         :type graph: UndirectedGraph
@@ -63,7 +63,7 @@ class PVCUtils:
 
         .. code-block:: python
 
-           from reoptimization_algortihms import PVCUtils
+           from reoptimization_algorithms import PVCUtils, UndirectedGraph
 
            graph = (UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
                     .add_vertex("6").add_edge("4", "8").add_vertex("99"))
@@ -93,7 +93,7 @@ class PVCUtils:
 
         .. code-block:: python
 
-            from reoptimization_algortihms import PVCUtils
+            from reoptimization_algorithms import PVCUtils, UndirectedGraph
 
             graph = (UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
                     .add_vertex("6").add_edge("4", "8").add_vertex("99"))

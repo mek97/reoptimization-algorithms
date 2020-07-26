@@ -22,7 +22,7 @@ copyright = '2020, Mehul Kumar'
 author = 'Mehul Kumar'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1.rc.1'
+release = '0.1.0'
 
 
 # -- General configuration ---------------------------------------------------

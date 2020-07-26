@@ -171,7 +171,7 @@
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reoptimization_algortihms</span> <span class="kn">import</span> <span class="n">UndirectedGraph</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reoptimization_algorithms</span> <span class="kn">import</span> <span class="n">UndirectedGraph</span>
 
 <span class="n">graph</span> <span class="o">=</span> <span class="n">UndirectedGraph</span><span class="p">()</span>
 <span class="n">graph</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span> <span class="c1"># Adding vertex</span>
@@ -203,14 +203,14 @@
 </table>
 <dl class="py method">
 <dt id="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.add_edge">
-<code class="sig-name descname">add_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex_1</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">vertex_2</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph" title="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph">reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph</a><a class="headerlink" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.add_edge" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex_1</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">vertex_2</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph" title="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph">reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph</a><a class="headerlink" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.add_edge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds an edge in the graph</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertex_1</strong> (<em>str</em>) – vertex 1 of the edge</p></li>
 <li><p><strong>vertex_2</strong> (<em>str</em>) – vertex 2 of the edge</p></li>
-<li><p><strong>weight</strong> (<em>int</em>) – Weight of the edge</p></li>
+<li><p><strong>weight</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default = None</em><em>)</em>) – Weight of the edge</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -221,13 +221,13 @@
 
 <dl class="py method">
 <dt id="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.add_vertex">
-<code class="sig-name descname">add_vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.add_vertex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds a vertex to the graph, default weight as <code class="xref py py-obj docutils literal notranslate"><span class="pre">Vertex.DEFAULT_VERTEX_WEIGHT</span></code></p>
+<code class="sig-name descname">add_vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.add_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a vertex to the graph, default weight as <a class="reference internal" href="reoptimization_algorithms.utils.graph.vertex.Vertex.html#reoptimization_algorithms.utils.graph.vertex.Vertex.DEFAULT_VERTEX_WEIGHT" title="reoptimization_algorithms.utils.graph.vertex.Vertex.DEFAULT_VERTEX_WEIGHT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Vertex.DEFAULT_VERTEX_WEIGHT</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertex</strong> (<em>str</em>) – Vertex key</p></li>
-<li><p><strong>weight</strong> (<em>int</em>) – Vertex weight</p></li>
+<li><p><strong>weight</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default = None</em><em>)</em>) – Vertex weight</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -285,6 +285,26 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Self</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.disjoint_graph_union">
+<code class="sig-name descname">disjoint_graph_union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attach_graph</span><span class="p">:</span> <span class="n">T</span></em>, <em class="sig-param"><span class="n">attach_edges</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Edge<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.disjoint_graph_union" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attaches the caller graph with attach graph and attachment edges, make sure the vertices are disjoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attach_graph</strong> (<em>T</em>) – Graph to attach</p></li>
+<li><p><strong>attach_edges</strong> (<em>List</em><em>[</em><a class="reference internal" href="reoptimization_algorithms.utils.graph.edge.Edge.html#reoptimization_algorithms.utils.graph.edge.Edge" title="reoptimization_algorithms.utils.graph.edge.Edge"><em>Edge</em></a><em>]</em>) – Edges to connect with attach_graph</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="reoptimization_algorithms.errors.Error.InputError.html#reoptimization_algorithms.errors.Error.InputError" title="reoptimization_algorithms.errors.Error.InputError"><strong>InputError</strong></a> – If Vertices of calling graph and attach graph are not disjoint</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Self</p>
 </dd>
 </dl>
 </dd></dl>
@@ -366,24 +386,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Vertices as list of {‘_Vertex__key’: ‘4’, ‘_weight’: 1, ‘_neighbours’: ..} and edges as list of
-dictionary of source, _destination and _weight</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.graph_union">
-<code class="sig-name descname">graph_union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attach_graph</span><span class="p">:</span> <span class="n">T</span></em>, <em class="sig-param"><span class="n">attach_edges</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Edge<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.graph_union" title="Permalink to this definition">¶</a></dt>
-<dd><p>Attaches the caller graph with attach graph and attachment edges</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>attach_graph</strong> (<em>T</em>) – Graph to attach</p></li>
-<li><p><strong>attach_edges</strong> (<em>List</em><em>[</em><a class="reference internal" href="reoptimization_algorithms.utils.graph.edge.Edge.html#reoptimization_algorithms.utils.graph.edge.Edge" title="reoptimization_algorithms.utils.graph.edge.Edge"><em>Edge</em></a><em>]</em>) – Edges to connect with attach_graph</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Self</p>
+dictionary {_source, _destination and _weight}</p>
 </dd>
 </dl>
 </dd></dl>
@@ -421,14 +424,14 @@ dictionary of source, _destination and _weight</p>
 
 <dl class="py method">
 <dt id="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.update_edge">
-<code class="sig-name descname">update_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex_1</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">vertex_2</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph" title="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph">reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph</a><a class="headerlink" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.update_edge" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex_1</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">vertex_2</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph" title="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph">reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph</a><a class="headerlink" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.update_edge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates edge weight in the graph</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertex_1</strong> (<em>str</em>) – vertex 1 of the edge</p></li>
 <li><p><strong>vertex_2</strong> (<em>str</em>) – vertex 2 of the edge</p></li>
-<li><p><strong>weight</strong> (<em>int</em>) – Weight to change with</p></li>
+<li><p><strong>weight</strong> (<em>float</em>) – Weight to change with</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -439,13 +442,13 @@ dictionary of source, _destination and _weight</p>
 
 <dl class="py method">
 <dt id="reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.update_vertex">
-<code class="sig-name descname">update_vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.update_vertex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates vertex weight</p>
+<code class="sig-name descname">update_vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span> &#x2192; T<a class="headerlink" href="#reoptimization_algorithms.utils.graph.undirected_graph.UndirectedGraph.update_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the vertex weight</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertex</strong> (<em>str</em>) – Vertex key</p></li>
-<li><p><strong>weight</strong> (<em>int</em>) – Vertex weight</p></li>
+<li><p><strong>weight</strong> (<em>float</em>) – Vertex weight</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

@@ -31,5 +31,5 @@ class BaseEdge(metaclass=ABCMeta):
         raise NotImplementedError
 
     @weight.setter
-    def weight(self, weight: int) -> None:
+    def weight(self, weight) -> None:
         raise NotImplementedError

@@ -22,7 +22,7 @@ class UnweightedPVCP:
         """
         :math:`(1+\\epsilon)` PTAS approximation for reoptimization of  unweighted k path vertex cover under constant size graph insertion
 
-         For formalisms and algorithm details refer - `Reoptimization of Path Vertex Cover Problem <https://link.springer.com/chapter/10.1007/978-3-030-26176-4_30#:~:text=The%20objective%20in%20k%2Dpath,cover%20problem%20admits%20a%20PTAS.>`_
+         For formalisms and algorithm details refer [1]_
 
         :param old_graph: Old graph
         :type old_graph: List[Edge]
@@ -35,7 +35,7 @@ class UnweightedPVCP:
         :param k: length of paths to cover
         :type k: int
         :param epsilon: epsilon in :math:`(1+\\epsilon)` PTAS  approximation
-        :type epsilon: float
+        :type epsilon: float, optional (default = 0.25)
 
         :return: Set of vertices
 
@@ -44,7 +44,7 @@ class UnweightedPVCP:
 
         .. code-block:: python
 
-            from reoptimization_algortihms import UnweightedPVCP
+            from reoptimization_algorithms import UnweightedPVCP, PVCUtils, UndirectedGraph, Edge
 
             old_graph = (UndirectedGraph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
                          .add_vertex("6").add_edge("4", "8").add_vertex("99")
@@ -53,9 +53,17 @@ class UnweightedPVCP:
             attach_edges = [Edge("4", "90")]
             solution = UnweightedPVCP.reoptimize_ptas(old_graph, attached_graph, attach_edges, {"8"}, 3)
             print(solution) # {"4"}
+
+        References
+        ~~~~~~~~~~
+        .. [1] Kumar M., Kumar A., Pandu Rangan C. (2019) Reoptimization of Path Vertex Cover Problem.
+           In: Du DZ., Duan Z., Tian C. (eds) Computing and Combinatorics. COCOON 2019.
+           Lecture Notes in Computer Science, vol 11653. Springer, Cham
+           <https://link.springer.com/chapter/10.1007/978-3-030-26176-4_30>
+
         """
         v_o = set(old_graph.get_vertices())
-        new_graph = old_graph.graph_union(attach_graph, attach_edges)
+        new_graph = old_graph.disjoint_graph_union(attach_graph, attach_edges)
         v_n = set(new_graph.get_vertices())
         v_a = v_n.difference(v_o)
 
