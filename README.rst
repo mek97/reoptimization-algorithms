@@ -74,4 +74,4 @@ Algorithms implemented
 Contribution
 ============
 
-Want to add or improvise the repository? Check out the `Contributing <https://github.com/mek97/repotimization-algorithms/blob/release-v0/CONTRIBUTING.rst>`_ documentation :)
+Want to add or improvise the repository? Check out the `Contributing <https://github.com/mek97/repotimization-algorithms/CONTRIBUTING.rst>`_ documentation :)
