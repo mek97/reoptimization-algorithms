@@ -13,7 +13,7 @@ with open(path.join(here, 'LICENSE.txt'), encoding='utf-8') as f:
 
 setup(
     name='reoptimization-algorithms',  # Required
-    version='0.1.0',  # Required
+    version='0.1.1',  # Required
     description='Package implementing some well known Reoptimization algorithms',  # Optional
 
     long_description=long_description,  # Optional

@@ -23,3 +23,5 @@ assists users migrating to a new version.
 - Released v0.0.1.rc1
 - Added references in docs
 - Released v0.1.0
+- Added fix for contribution link in read me and docs
+- Released v0.1.1
