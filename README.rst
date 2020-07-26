@@ -4,7 +4,7 @@ Reoptimization Algorithms
 
 Package implementing some well known Reoptimization algorithms
 
-.. image:: images/header.png
+.. image:: https://mek97.github.io/reoptimization-algorithms/_images/header.png
 
 `Perterson Graph <https://en.wikipedia.org/wiki/Generalized_Petersen_grapht>`_ (Made using `GeoGebra <https://www.geogebra.org/?lang=en>`_)
 
