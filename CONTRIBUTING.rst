@@ -31,9 +31,8 @@ Any unassigned feature request issue is open to whoever wants to implement it.
 Improve Documentation
 ---------------------
 
-Documentation improvements are always welcomed, whether as part of the official
-Airflow docs, in docstrings, ``docs/*.rst`` or even on the web as blog posts or
-articles.
+Documentation improvements are always welcomed, whether as part of the official docs,
+in docstrings, ``docs/*.rst`` or even on the web as blog posts or articles.
 
 Submit Feedback
 ---------------
@@ -85,4 +84,4 @@ these guidelines:
 Git Branches
 ------------
 
-``master`` branch is the stable branch. All PRs should be merged in ``release-v*`` branch.
+``master`` branch is the stable branch. All PRs should target ``master`` branch and test ``release-v*`` branch.

@@ -32,11 +32,11 @@ class PVCUtils:
 
         .. code-block:: python
 
-           from reoptimization_algorithms import PVCUtils, UndirectedGraph
+           import reoptimization_algorithms as ra
 
-           graph = (UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
+           graph = (ra.UndirectedGraph().add_edge("4", "5").add_edge("40", "50")
                     .add_vertex("6").add_edge("4", "8").add_vertex("99"))
-           print(PVCUtils.is_k_pvc(graph, {"4"}, 3)) # True
+           print(ra.PVCUtils.is_k_pvc(graph, {"4"}, 3)) # True
         """
         is_k_pvc = True
         for k_path in list(combinations(graph.get_vertices(), k)):
