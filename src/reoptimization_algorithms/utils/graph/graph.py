@@ -257,7 +257,7 @@ class Graph(BaseGraph, ABC):
 
         :return: Self
         """
-        self.get_vertex(source).add_neighbour(destination, weight)
+        self.get_vertex(source).update_neighbour(destination, weight)
         return self
 
     def get_edges(self) -> List[Dict]:
