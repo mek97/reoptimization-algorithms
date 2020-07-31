@@ -44,14 +44,14 @@ class UnweightedPVCP:
 
         .. code-block:: python
 
-            from reoptimization_algorithms import UnweightedPVCP, PVCUtils, UndirectedGraph, Edge
+            import reoptimization_algorithms as ra
 
-            old_graph = (UndirectedGraph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
+            old_graph = (ra.UndirectedGraph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
                          .add_vertex("6").add_edge("4", "8").add_vertex("99")
                          .delete_vertex("6"))
-            attached_graph = UndirectedGraph().add_edge("90", "95")
-            attach_edges = [Edge("4", "90")]
-            solution = UnweightedPVCP.reoptimize_ptas(old_graph, attached_graph, attach_edges, {"8"}, 3)
+            attached_graph = ra.UndirectedGraph().add_edge("90", "95")
+            attach_edges = [ra.Edge("4", "90")]
+            solution = ra.UnweightedPVCP.reoptimize_ptas(old_graph, attached_graph, attach_edges, {"8"}, 3)
             print(solution) # {"4"}
 
         References

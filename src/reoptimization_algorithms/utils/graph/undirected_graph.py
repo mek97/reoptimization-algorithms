@@ -22,9 +22,9 @@ class UndirectedGraph(Graph):
 
     .. code-block:: python
 
-       from reoptimization_algorithms import UndirectedGraph
+       import reoptimization_algorithms as ra
 
-       graph = UndirectedGraph()
+       graph = ra.UndirectedGraph()
        graph = graph.add_vertex("4", 14) # Adding vertex
        graph.get_vertex("4") # Getting vertex
        graph = graph.update_vertex("4", 15) # Update vertex weight
@@ -35,7 +35,7 @@ class UndirectedGraph(Graph):
        graph = graph.delete_edge("4", "5") # Deleting Edge
 
        # Add, Update and Deletes can be chained as follows
-       graph = (UndirectedGraph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
+       graph = (ra.UndirectedGraph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
        .add_vertex("6").add_edge("4", "8").delete_edge("4", "5").add_vertex("99")
        .delete_vertex("6"))
 
