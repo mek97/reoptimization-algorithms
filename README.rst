@@ -2,6 +2,17 @@
 Reoptimization Algorithms
 *************************
 
+.. image:: https://img.shields.io/pypi/v/reoptimization-algorithms.svg
+   :target: https://pypi.org/project/reoptimization-algorithms/
+   :alt: Latest Version
+
+.. image:: https://github.com/mek97/reoptimization-algorithms/workflows/Unit%20tests/badge.svg
+   :target: https://github.com/mek97/reoptimization-algorithms/
+
+.. image:: https://codecov.io/gh/mek97/reoptimization-algorithms/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/mek97/reoptimization-algorithms/
+
+
 Package implementing some well known Reoptimization algorithms
 
 .. image:: https://mek97.github.io/reoptimization-algorithms/_images/header.png

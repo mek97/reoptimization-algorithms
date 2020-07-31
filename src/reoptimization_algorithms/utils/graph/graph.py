@@ -29,9 +29,9 @@ class Graph(BaseGraph, ABC):
 
     .. code-block:: python
 
-       from reoptimization_algorithms import Graph
+       import reoptimization_algorithms as ra
 
-       graph = Graph()
+       graph = ra.Graph()
        graph = graph.add_vertex("4", 14) # Adding vertex
        graph.get_vertex("4") # Getting vertex
        graph = graph.update_vertex("4", 15) # Update vertex weight
@@ -42,7 +42,7 @@ class Graph(BaseGraph, ABC):
        graph = graph.delete_edge("4", "5") # Deleting Edge
 
        # Add, Update and Deletes can be chained as follows
-       graph = (Graph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
+       graph = (ra.Graph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
                 .add_vertex("6").add_edge("4", "8").delete_edge("4", "5").add_vertex("99")
                 .delete_vertex("6"))
     """
