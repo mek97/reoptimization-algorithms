@@ -12,6 +12,9 @@ Reoptimization Algorithms
 .. image:: https://codecov.io/gh/mek97/reoptimization-algorithms/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/mek97/reoptimization-algorithms/
 
+.. image:: https://img.shields.io/badge/License-MIT-blue.svg
+   :target: https://opensource.org/licenses/MIT
+
 
 Package implementing some well known Reoptimization algorithms
 
@@ -60,7 +63,25 @@ Installation
 Documentation
 =============
 
-For documentation and usage refer `here <https://mek97.github.io/reoptimization-algorithms/index.html>`_
+Toy example
+~~~~~~~~~~~
+.. code-block:: python
+
+            import reoptimization_algorithms as ra
+
+            old_graph = (ra.UndirectedGraph().add_vertex("4").add_edge("4", "5").add_edge("40", "50")
+                         .add_vertex("6").add_edge("4", "8").add_vertex("99").delete_vertex("6"))
+            attached_graph = ra.UndirectedGraph().add_edge("90", "95")
+            attach_edges = [ra.Edge("4", "90")]
+            old_solution = {"8"}
+
+            solution = ra.UnweightedPVCP.reoptimize_ptas(old_graph, attached_graph, attach_edges,
+                                                         old_solution, k = 3)
+            print(solution) # {"4"}
+
+
+For detailed documentation and usage refer `here <https://mek97.github.io/reoptimization-algorithms/index.html>`_
+
 
 
 ==============
