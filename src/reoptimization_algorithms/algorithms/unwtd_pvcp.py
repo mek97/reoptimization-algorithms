@@ -51,7 +51,9 @@ class UnweightedPVCP:
                          .delete_vertex("6"))
             attached_graph = ra.UndirectedGraph().add_edge("90", "95")
             attach_edges = [ra.Edge("4", "90")]
-            solution = ra.UnweightedPVCP.reoptimize_ptas(old_graph, attached_graph, attach_edges, {"8"}, 3)
+            old_solution = {"8"}
+
+            solution = ra.UnweightedPVCP.reoptimize_ptas(old_graph, attached_graph, attach_edges, old_solution, k = 3)
             print(solution) # {"4"}
 
         References
