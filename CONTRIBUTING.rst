@@ -66,7 +66,9 @@ these guidelines:
 
 -   Strictly adhering PEP8 coding style guide.
 
-    Coding style rules are enforced programmatically by flake8.
+-   Format the code using `black <https://github.com/psf/black>`__
+
+    Coding style rules are enforced programmatically by flake8 and black.
 
 -   When merging PRs, wherever possible try to use **Squash and Merge** instead of **Rebase and Merge**.
 
@@ -74,9 +76,9 @@ these guidelines:
     of the same PR. Doc string is often sufficient. Make sure to follow the
     Sphinx compatible standards.
 
--   Run tests locally before opening PR. Tests can be run via ``tox -e py37`` for python 3.7 env and similarly for 3.6 anf 3.8
+-   Run tests locally and run tests via ``tox -e py37`` for python 3.7 env and similarly for 3.6 and 3.8.
 
--   Make sure the pull request works for Python 3.6, 3.7 and 3.8.
+-   Create a pull request and make sure it works for Python 3.6, 3.7 and 3.8.
 
 -   Adhere to guidelines for commit messages described in this `article <http://chris.beams.io/posts/git-commit/>`__.
     This makes the lives of those who come after you a lot easier.
