@@ -28,3 +28,4 @@ assists users migrating to a new version.
 - Minor docs enhancements (added badges etc)
 - Added fix `update_edge` method in graph
 - Released v0.1.2
+- Added black formatter CI

@@ -14,7 +14,7 @@ class PVCUtils:
     """
 
     @staticmethod
-    def is_k_pvc(graph: 'UndirectedGraph', vertices: Set['str'], k: int) -> bool:
+    def is_k_pvc(graph: "UndirectedGraph", vertices: Set["str"], k: int) -> bool:
         """
         Checks if the given candidate vertices are k path vertex cover for the graph
 
@@ -41,13 +41,15 @@ class PVCUtils:
         is_k_pvc = True
         for k_path in list(combinations(graph.get_vertices(), k)):
             k_path_set = set(k_path)
-            if len(k_path_set.intersection(vertices)) == 0 and PVCUtils.is_vertex_set_path(graph, k_path_set):
+            if len(
+                k_path_set.intersection(vertices)
+            ) == 0 and PVCUtils.is_vertex_set_path(graph, k_path_set):
                 is_k_pvc = False
                 break
         return is_k_pvc
 
     @staticmethod
-    def is_vertex_set_path(graph: 'UndirectedGraph', vertices: Iterable['str']) -> bool:
+    def is_vertex_set_path(graph: "UndirectedGraph", vertices: Iterable["str"]) -> bool:
         """
         Checks if the vertices form a path of length :math:`k` in graph
 
@@ -77,7 +79,9 @@ class PVCUtils:
         return is_k_path
 
     @staticmethod
-    def is_path(graph: 'UndirectedGraph', path: Union[List['str'], Tuple['str']]) -> bool:
+    def is_path(
+        graph: "UndirectedGraph", path: Union[List["str"], Tuple["str"]]
+    ) -> bool:
         """
         Checks if the path exists in the graph
 
