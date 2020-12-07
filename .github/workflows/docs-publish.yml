@@ -11,6 +11,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_RA_TOKEN }}
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -23,4 +25,4 @@ jobs:
         run: |
           git config --local user.email "mehul.k1997@gmail.com"
           git config --local user.name "[BOT] GitHub Action"
-          git diff --quiet || (git add docs && git commit -m "Docs Synchronization" && git push)
+          git diff --quiet || (git add docs && git commit -m "[BOT] Docs Synchronization" && git push)

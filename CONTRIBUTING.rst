@@ -53,7 +53,7 @@ these guidelines:
 
 -   Include docs in ``README.rst`` and ``docsrc/source/content.rst`` and docstrings.
 
-    Generate docs using ``make -C docsrc github-publish``
+    Test docs using ``sphinx-build -q -b html docsrc/source docsrc/build``
 
     The repo uses `Sphinx autosummary extenstion <https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html>`__ for generating docs
 
