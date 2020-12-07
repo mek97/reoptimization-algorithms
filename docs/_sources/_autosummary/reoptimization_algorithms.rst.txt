@@ -1,4 +1,4 @@
-reoptimization\_algorithms
+﻿reoptimization\_algorithms
 ==========================
 
 .. automodule:: reoptimization_algorithms
