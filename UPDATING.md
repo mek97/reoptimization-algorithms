@@ -29,3 +29,4 @@ assists users migrating to a new version.
 - Added fix `update_edge` method in graph
 - Released v0.1.2
 - Added black formatter CI
+- Added docs publish CI
