@@ -17,8 +17,14 @@ class UnweightedPVCP:
     """
 
     @staticmethod
-    def reoptimize_ptas(old_graph: 'UndirectedGraph', attach_graph: 'UndirectedGraph', attach_edges: List[Edge],
-                        old_solution: Set[str], k: int, epsilon: float = 0.25) -> Set[str]:
+    def reoptimize_ptas(
+        old_graph: "UndirectedGraph",
+        attach_graph: "UndirectedGraph",
+        attach_edges: List[Edge],
+        old_solution: Set[str],
+        k: int,
+        epsilon: float = 0.25,
+    ) -> Set[str]:
         """
         :math:`(1+\\epsilon)` PTAS approximation for reoptimization of  unweighted k path vertex cover under constant size graph insertion
 
@@ -72,9 +78,13 @@ class UnweightedPVCP:
 
         m = ceil(len(v_a) / epsilon)
         sol_1 = v_n
-        for c in set(chain.from_iterable(combinations(v_n, r) for r in range(0, m + 1))):
+        for c in set(
+            chain.from_iterable(combinations(v_n, r) for r in range(0, m + 1))
+        ):
             candidate_vertices = set(c)
-            if len(candidate_vertices) < len(sol_1) and PVCUtils.is_k_pvc(new_graph, candidate_vertices, k):
+            if len(candidate_vertices) < len(sol_1) and PVCUtils.is_k_pvc(
+                new_graph, candidate_vertices, k
+            ):
                 sol_1 = candidate_vertices
         sol_2 = v_a.union(old_solution)
         result = sol_1 if len(sol_1) < len(sol_2) else sol_2
