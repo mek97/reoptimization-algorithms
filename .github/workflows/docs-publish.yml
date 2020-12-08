@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-      - release-v0
+      - release-v*
 
 jobs:
   build:

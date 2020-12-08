@@ -11,6 +11,7 @@ assists users migrating to a new version.
 ## Master
 [master](https://github.com/mek97/reoptimization-algorithms/tree/master)
 - Released v0.1.0
+- Release v0.1.x
 
 ## Release v0.1.x
 [release-v0.1.x](https://github.com/mek97/reoptimization-algorithms/tree/release-v0)
@@ -30,3 +31,4 @@ assists users migrating to a new version.
 - Released v0.1.2
 - Added black formatter CI
 - Added docs publish CI
+- Released v0.1.3
