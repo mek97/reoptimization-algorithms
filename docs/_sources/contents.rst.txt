@@ -132,6 +132,12 @@ Contribution
 
 Want to add or improvise the repository? Check out the `Contributing <https://github.com/mek97/reoptimization-algorithms/blob/master/CONTRIBUTING.rst>`_ documentation :)
 
+###########
+Change Logs
+###########
+
+For change logs refer to `Updating <https://github.com/mek97/reoptimization-algorithms/blob/master/UPDATING.md>`_ documentation
+
 ##################
 Indices and tables
 ##################
