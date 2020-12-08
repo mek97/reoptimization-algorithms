@@ -86,4 +86,4 @@ these guidelines:
 Git Branches
 ------------
 
-``master`` branch is the stable branch. All PRs should target ``master`` branch and test ``release-v*`` branch.
+``master`` branch is the stable branch, should always be synced with latest release branch. All new feature PRs should target ``master`` branch and release specific PRs ``release-v*`` branch.
