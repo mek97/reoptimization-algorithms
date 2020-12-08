@@ -6,7 +6,10 @@ Reoptimization Algorithms
    :target: https://pypi.org/project/reoptimization-algorithms/
    :alt: Latest Version
 
-.. image:: https://github.com/mek97/reoptimization-algorithms/workflows/Unit%20tests/badge.svg
+.. image:: https://github.com/mek97/reoptimization-algorithms/workflows/Build%20tests/badge.svg
+   :target: https://github.com/mek97/reoptimization-algorithms/
+
+.. image:: https://github.com/mek97/reoptimization-algorithms/workflows/Docs%20publish/badge.svg
    :target: https://github.com/mek97/reoptimization-algorithms/
 
 .. image:: https://codecov.io/gh/mek97/reoptimization-algorithms/branch/master/graph/badge.svg
@@ -14,6 +17,9 @@ Reoptimization Algorithms
 
 .. image:: https://img.shields.io/badge/License-MIT-blue.svg
    :target: https://opensource.org/licenses/MIT
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
 
 
 Package implementing some well known Reoptimization algorithms
