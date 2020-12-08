@@ -32,19 +32,19 @@ class BaseVertex(metaclass=ABCMeta):
     def neighbours(self, neighbours) -> None:
         raise NotImplementedError
 
-    def add_neighbour(self, neighbour: str, weight) -> 'BaseVertex':
+    def add_neighbour(self, neighbour: str, weight) -> "BaseVertex":
         raise NotImplementedError
 
-    def get_neighbour(self, neighbour: str) -> 'BaseEdge':
+    def get_neighbour(self, neighbour: str) -> "BaseEdge":
         raise NotImplementedError
 
-    def update_neighbour(self, neighbour: str, weight) -> 'BaseVertex':
+    def update_neighbour(self, neighbour: str, weight) -> "BaseVertex":
         raise NotImplementedError
 
-    def update(self, weight: int) -> 'BaseVertex':
+    def update(self, weight: int) -> "BaseVertex":
         raise NotImplementedError
 
-    def delete_neighbour(self, neighbour: str) -> 'BaseEdge':
+    def delete_neighbour(self, neighbour: str) -> "BaseEdge":
         raise NotImplementedError
 
     def degree(self) -> int:

@@ -11,7 +11,7 @@ from reoptimization_algorithms.utils.graph.base_graph import BaseGraph
 from reoptimization_algorithms.utils.graph.edge import Edge
 from reoptimization_algorithms.utils.graph.vertex import Vertex
 
-T = TypeVar('T', bound='Graph')
+T = TypeVar("T", bound="Graph")
 
 
 class Graph(BaseGraph, ABC):
@@ -47,7 +47,7 @@ class Graph(BaseGraph, ABC):
                 .delete_vertex("6"))
     """
 
-    def __init__(self, graph: Dict[str, 'Vertex'] = None):
+    def __init__(self, graph: Dict[str, "Vertex"] = None):
         """
         Graph data structure class, represented as dictionary with vertices as key mapped to neighbouring vertices
 
@@ -59,14 +59,14 @@ class Graph(BaseGraph, ABC):
         self._graph = graph
 
     @property
-    def graph(self) -> Dict[str, 'Vertex']:
+    def graph(self) -> Dict[str, "Vertex"]:
         """
         Graph represented as dictionary with vertices as key mapped to neighbouring vertices
         """
         return self._graph
 
     @graph.setter
-    def graph(self, graph: Dict[str, 'Vertex']) -> None:
+    def graph(self, graph: Dict[str, "Vertex"]) -> None:
         """
         Graph setter
 
@@ -87,7 +87,7 @@ class Graph(BaseGraph, ABC):
         """
         return vertex in self._graph
 
-    def get_vertex(self, vertex: str) -> 'Vertex':
+    def get_vertex(self, vertex: str) -> "Vertex":
         """
         Gets the vertex
 
@@ -97,7 +97,7 @@ class Graph(BaseGraph, ABC):
         :return: Vertex
         """
         if not self.is_vertex_exists(vertex):
-            raise Exception(f'Vertex {vertex} does not exists, create it first')
+            raise Exception(f"Vertex {vertex} does not exists, create it first")
 
         return self._graph.get(vertex)
 
@@ -113,7 +113,7 @@ class Graph(BaseGraph, ABC):
         :return: Self
         """
         if self.is_vertex_exists(vertex):
-            raise Exception(f'Vertex {vertex} already exists, delete it first')
+            raise Exception(f"Vertex {vertex} already exists, delete it first")
 
         self._graph[vertex] = Vertex(vertex, weight)
         return self
@@ -129,7 +129,9 @@ class Graph(BaseGraph, ABC):
         """
         for v in self.get_vertices():
             vertex_obj = self.get_vertex(v)
-            vertex_obj.is_neighbour_exists(vertex) and vertex_obj.delete_neighbour(vertex)
+            vertex_obj.is_neighbour_exists(vertex) and vertex_obj.delete_neighbour(
+                vertex
+            )
 
         self._graph.pop(vertex)
         return self
@@ -156,7 +158,7 @@ class Graph(BaseGraph, ABC):
         """
         return list(self._graph.keys())
 
-    def get_isolated_vertices(self) -> List['Vertex']:
+    def get_isolated_vertices(self) -> List["Vertex"]:
         """
         Gets isolated vertices in the graph
 
@@ -190,9 +192,11 @@ class Graph(BaseGraph, ABC):
 
         :return: Boolean
         """
-        return self.is_vertex_exists(source) and self.get_vertex(source).is_neighbour_exists(destination)
+        return self.is_vertex_exists(source) and self.get_vertex(
+            source
+        ).is_neighbour_exists(destination)
 
-    def get_edge(self, source: str, destination: str) -> 'Edge':
+    def get_edge(self, source: str, destination: str) -> "Edge":
         """
         Gets edge from the graph
 
@@ -225,7 +229,9 @@ class Graph(BaseGraph, ABC):
             self.add_vertex(destination)
 
         if self.is_edge_exists(source, destination):
-            raise Exception(f'Edge stc: {source} dest: {destination} already exists, delete it first')
+            raise Exception(
+                f"Edge stc: {source} dest: {destination} already exists, delete it first"
+            )
 
         self.get_vertex(source).add_neighbour(destination, weight)
         return self
@@ -282,7 +288,7 @@ class Graph(BaseGraph, ABC):
         """
         return copy.deepcopy(self)
 
-    def disjoint_graph_union(self: T, attach_graph: T, attach_edges: List['Edge']) -> T:
+    def disjoint_graph_union(self: T, attach_graph: T, attach_edges: List["Edge"]) -> T:
         """
         Attaches the caller graph with attach graph and attachment edges, make sure the vertices are disjoint
 
@@ -296,11 +302,13 @@ class Graph(BaseGraph, ABC):
         :return: Self
         """
         if not set(self.get_vertices()).isdisjoint(set(attach_graph.get_vertices())):
-            raise InputError({
-                "calling_graph_vertices": self.get_vertices(),
-                "attach_graph_edges": attach_graph.get_vertices()
-            },
-                "Vertices of calling graph and attach graph must be disjoint")
+            raise InputError(
+                {
+                    "calling_graph_vertices": self.get_vertices(),
+                    "attach_graph_edges": attach_graph.get_vertices(),
+                },
+                "Vertices of calling graph and attach graph must be disjoint",
+            )
 
         graph = Graph(copy.deepcopy({**self.graph, **attach_graph.graph}))
         for edge in attach_edges:

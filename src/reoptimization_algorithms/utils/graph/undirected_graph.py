@@ -41,7 +41,7 @@ class UndirectedGraph(Graph):
 
     """
 
-    def __init__(self, graph: Dict[str, 'Vertex'] = None):
+    def __init__(self, graph: Dict[str, "Vertex"] = None):
         """
         Undirected Graph data structure class, inheriting Graph class, represented as dictionary with vertices
          as key mapped to neighbouring vertices in a symmetric manner
@@ -66,9 +66,13 @@ class UndirectedGraph(Graph):
 
         :return: Boolean
         """
-        return super().is_edge_exists(vertex_1, vertex_2) and super().is_edge_exists(vertex_2, vertex_1)
+        return super().is_edge_exists(vertex_1, vertex_2) and super().is_edge_exists(
+            vertex_2, vertex_1
+        )
 
-    def update_edge(self, vertex_1: str, vertex_2: str, weight: float) -> 'UndirectedGraph':
+    def update_edge(
+        self, vertex_1: str, vertex_2: str, weight: float
+    ) -> "UndirectedGraph":
         """
         Updates edge weight in the graph
 
@@ -82,14 +86,16 @@ class UndirectedGraph(Graph):
         :return: Self
         """
         if not self.is_edge_exists(vertex_1, vertex_2):
-            raise Exception(f'Edge stc: {vertex_1} dest: {vertex_2} does not exists, create it first')
+            raise Exception(
+                f"Edge stc: {vertex_1} dest: {vertex_2} does not exists, create it first"
+            )
 
         super().update_edge(vertex_1, vertex_2, weight)
         super().update_edge(vertex_2, vertex_1, weight)
 
         return self
 
-    def delete_edge(self, vertex_1: str, vertex_2: str) -> 'UndirectedGraph':
+    def delete_edge(self, vertex_1: str, vertex_2: str) -> "UndirectedGraph":
         """
         Deletes an edge in the graph
 
@@ -101,14 +107,18 @@ class UndirectedGraph(Graph):
         :return: Self
         """
         if not self.is_edge_exists(vertex_1, vertex_2):
-            raise Exception(f'Edge stc: {vertex_1} dest: {vertex_2} does not exists, create it first')
+            raise Exception(
+                f"Edge stc: {vertex_1} dest: {vertex_2} does not exists, create it first"
+            )
 
         super().delete_edge(vertex_1, vertex_2)
         super().delete_edge(vertex_2, vertex_1)
 
         return self
 
-    def add_edge(self, vertex_1: str, vertex_2: str, weight: float = None) -> 'UndirectedGraph':
+    def add_edge(
+        self, vertex_1: str, vertex_2: str, weight: float = None
+    ) -> "UndirectedGraph":
         """
         Adds an edge in the graph
 
@@ -122,7 +132,9 @@ class UndirectedGraph(Graph):
         :return: Self
         """
         if self.is_edge_exists(vertex_1, vertex_2):
-            raise Exception(f'Symmetric Edge ({vertex_1}, {vertex_2}) already exists, delete it first')
+            raise Exception(
+                f"Symmetric Edge ({vertex_1}, {vertex_2}) already exists, delete it first"
+            )
 
         super().add_edge(vertex_1, vertex_2, weight)
         super().add_edge(vertex_2, vertex_1, weight)

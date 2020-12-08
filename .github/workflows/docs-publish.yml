@@ -1,0 +1,28 @@
+name: Docs publish
+on:
+  push:
+    branches:
+      - master
+      - release-v0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Install sphinx-docs
+        run:  pip install -U sphinx sphinx_rtd_theme
+      - name: Build sphinx-docs
+        run:  make -C docsrc github-publish
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "[BOT] GitHub Action"
+          git diff --quiet || (git add docs && git commit -m "[BOT] Docs Publish" && git push)
