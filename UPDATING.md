@@ -32,3 +32,4 @@ assists users migrating to a new version.
 - Added black formatter CI
 - Added docs publish CI
 - Released v0.1.3
+- Added python 3.9 support
