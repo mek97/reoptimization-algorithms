@@ -23,7 +23,7 @@ Setup
 Requirements
 ============
 
-* (**Recommended**) Python versions: >=3.6, <=3.8
+* (**Recommended**) Python versions: >=3.6, <=3.9.*
 
 Installation
 ============

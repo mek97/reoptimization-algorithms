@@ -76,9 +76,9 @@ these guidelines:
     of the same PR. Doc string is often sufficient. Make sure to follow the
     Sphinx compatible standards.
 
--   Run tests locally and run tests via ``tox -e py37`` for python 3.7 env and similarly for 3.6 and 3.8.
+-   Run tests locally and run tests via ``tox -e py37`` for python 3.7 env and similarly for 3.6, 3.8 and 3.9.
 
--   Create a pull request and make sure it works for Python 3.6, 3.7 and 3.8.
+-   Create a pull request and make sure it works for Python 3.6, 3.7, 3.8 and 3.9.
 
 -   Adhere to guidelines for commit messages described in this `article <http://chris.beams.io/posts/git-commit/>`__.
     This makes the lives of those who come after you a lot easier.
